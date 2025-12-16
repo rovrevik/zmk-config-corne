@@ -38,25 +38,25 @@
 // https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
 // started at "normal" and moving towards "faster".
 
-#define HRM_I_TAPPING_TERM_MS 290
-#define HRM_I_QUICK_TAP_MS 400
-#define HRM_I_REQUIRE_PRIOR_IDLE_MS 200
+#define HRM_I_TAPPING_TERM_MS 280
+#define HRM_I_QUICK_TAP_MS 390
+#define HRM_I_REQUIRE_PRIOR_IDLE_MS 190
 
-#define HRM_M_TAPPING_TERM_MS 310
-#define HRM_M_QUICK_TAP_MS 400
-#define HRM_M_REQUIRE_PRIOR_IDLE_MS 250
+#define HRM_M_TAPPING_TERM_MS 300
+#define HRM_M_QUICK_TAP_MS 390
+#define HRM_M_REQUIRE_PRIOR_IDLE_MS 240
 
-#define HRM_R_TAPPING_TERM_MS 340
-#define HRM_R_QUICK_TAP_MS 400
-#define HRM_R_REQUIRE_PRIOR_IDLE_MS 250
+#define HRM_R_TAPPING_TERM_MS 330
+#define HRM_R_QUICK_TAP_MS 390
+#define HRM_R_REQUIRE_PRIOR_IDLE_MS 240
 
-#define HRM_P_TAPPING_TERM_MS 380
-#define HRM_P_QUICK_TAP_MS 400
-#define HRM_P_REQUIRE_PRIOR_IDLE_MS 250
+#define HRM_P_TAPPING_TERM_MS 370
+#define HRM_P_QUICK_TAP_MS 390
+#define HRM_P_REQUIRE_PRIOR_IDLE_MS 240
 
 // thumb row layer timings
-#define THUMB_TAPPING_TERM_MS 300
-#define THUMB_QUICK_TAP_MS 400
+#define THUMB_TAPPING_TERM_MS 290
+#define THUMB_QUICK_TAP_MS 390
 
 / {
     behaviors {
