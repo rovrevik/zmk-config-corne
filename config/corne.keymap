@@ -20,7 +20,7 @@
 #define RT_RET_KEY_POSITION 39
 // timeout default 50ms
 // zmk/app/dts/bindings/zmk,combos.yaml
-#define COMBO_TIMEOUT_MS 100
+#define COMBO_TIMEOUT_MS 140
 
 // | Left Half:                  |  | Right Half:                 |
 // | 00 | 01 | 02 | 03 | 04 | 05 |  | 06 | 07 | 08 | 09 | 10 | 11 |
