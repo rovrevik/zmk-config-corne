@@ -479,7 +479,7 @@
             // | Left Half:                     |  | Right Half:           |
             // |       | Q | W | E | R | T      |  | Y    | U     | I | O | P |   |
             // | ESC   | A | S | D | F | G      |  | H    | J     | K | L | ; | ' |
-            // | GRAVE | Z | X | C | V | B      |  | N    | M     | , | . | / | \ |
+            // | GRAVE | Z | X | C | V | B      |  | N    | M     | , | . | / |   |
             // |               |   | BSPC | TAB |  | BSPC | SPACE |   |           |
 
             // deficiencies with left hand only operation: uncomfortable or awkward stretches
@@ -497,7 +497,7 @@
             bindings = <
 &none               &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y           &kp U               &kp I           &kp O           &kp P               &none
 &hml_p LMEH ESC     &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &hml_i LHYPER G             &hml_i LHYPER H &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &hml_p LMEH SQT
-&hml_p GLOBE GRAVE  &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N           &kp M               &kp COMMA       &kp DOT         &kp FSLH            &kp BSLH
+&hml_p GLOBE GRAVE  &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N           &kp M               &kp COMMA       &kp DOT         &kp FSLH            &none
                                                     &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM TAB       &kp RET        &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
@@ -543,14 +543,14 @@
 
             // | Left Half:            |    | Right Half:           |
             // |   | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |   |
-            // |   |   |   |   |   |   |    |   | - | = | [ | ] |   |
+            // |   |   |   |   |   |   |    |   | - | = | [ | ] | \ |
             // |   |   |   |   |   |   |    |   |   |   |   |   |   |
             // |           |   |   |   |    |   |   |   |           |
 
             bindings = <
 // &trans      &sft_tg EXCL N1 &sft_tg AT N2   &sft_tg HASH N3 &sft_tg DLLR N4 &sft_tg PRCNT N5    &sft_tg CARET N6    &sft_tg AMPS N7 &sft_tg ASTRK N8    &sft_tg LPAR N9 &sft_tg RPAR N0 &trans
 &trans      &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT           &kp CARET           &kp AMPS        &kp ASTRK           &kp LPAR        &kp RPAR        &trans
-&trans      &trans          &trans          &trans          &trans          &trans              &trans              &kp MINUS       &kp EQUAL           &kp LBKT        &kp RBKT        &trans
+&trans      &trans          &trans          &trans          &trans          &trans              &trans              &kp MINUS       &kp EQUAL           &kp LBKT        &kp RBKT        &kp BSLH
 &trans      &trans          &trans          &trans          &trans          &trans              &trans              &trans          &trans              &trans          &trans          &trans
                                             &trans          &trans          &trans              &trans              &trans          &trans
             >;
