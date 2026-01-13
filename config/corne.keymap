@@ -226,27 +226,7 @@
             quick-tap-ms = <THUMB_QUICK_TAP_MS>;
         };
 
-        // support numbers when shift is held in the SYM layer
-        // mod_morph: mod_morph {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     #binding-cells = <3>;
-        // };
-
         // MOD_LSFT = 0x02
-        // MOD_RSFT = 0x20
-        // MOD_LSFT|MOD_RSFT = 0x22
-        // sft_tg: sft_tg_rlo {
-            // compatible = "zmk,behavior-param-macro";
-            // #binding-cells = <2>;
-            // bindings = <
-            //     &mod_morph &kp &kp 0x22
-            // >;
-
-            // compatible = "zmk,behavior-mod-morph";
-            // #binding-cells = <2>;
-            // bindings = <&kp>, <&kp>;
-            // mods = <(MOD_LSFT|MOD_RSFT)>;
-        // };
     };
 
     macros {
@@ -548,7 +528,6 @@
             // |           |   |   |   |    |   |   |   |           |
 
             bindings = <
-// &trans      &sft_tg EXCL N1 &sft_tg AT N2   &sft_tg HASH N3 &sft_tg DLLR N4 &sft_tg PRCNT N5    &sft_tg CARET N6    &sft_tg AMPS N7 &sft_tg ASTRK N8    &sft_tg LPAR N9 &sft_tg RPAR N0 &trans
 &trans      &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT           &kp CARET           &kp AMPS        &kp ASTRK           &kp LPAR        &kp RPAR        &trans
 &trans      &trans          &trans          &trans          &trans          &trans              &trans              &kp MINUS       &kp EQUAL           &kp LBKT        &kp RBKT        &kp BSLH
 &trans      &trans          &trans          &trans          &trans          &trans              &trans              &trans          &trans              &trans          &trans          &trans
