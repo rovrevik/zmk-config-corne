@@ -479,8 +479,8 @@
 
             bindings = <
 &none               &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y           &kp U               &kp I           &kp O           &kp P               &none
-&hml_p LMEH ESC     &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &hml_i LHYPER G             &hml_i LHYPER H &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &hml_p LMEH SQT
-&hml_p GLOBE GRAVE  &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N           &kp M               &kp COMMA       &kp DOT         &kp FSLH            &none
+&hml_p LHYPER ESC   &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &kp G                       &kp H           &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
+&hml_p GLOBE GRAVE  &hml_p LHYPER Z &hml_r LMEH X   &kp C           &kp V                   &kp B                       &kp N           &kp M               &kp COMMA       &kp DOT         &kp FSLH            &none
                                                     &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM TAB       &kp RET        &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
