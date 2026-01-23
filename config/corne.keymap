@@ -457,10 +457,10 @@
             // |           |   |   |   |    |   |   |   |           |
 
             // | Left Half:                     |  | Right Half:           |
-            // |       | Q | W | E   | R    | T   |  | Y    | U     | I | O | P |   |
-            // | ESC   | A | S | D   | F    | G   |  | H    | J     | K | L | ; | ' |
-            // | GRAVE | Z | X | C   | V    | B   |  | N    | M     | , | . | / |   |
-            // |               | ESC | BSPC | TAB |  | BSPC | SPACE |   |           |
+            // |       | Q | W | E   | R    | T   |  | Y   | U     | I | O | P |   |
+            // | ESC   | A | S | D   | F    | G   |  | H   | J     | K | L | ; | ' |
+            // | GRAVE | Z | X | C   | V    | B   |  | N   | M     | , | . | / |   |
+            // |               | ESC | BSPC | TAB |  | RET | SPACE |   |           |
 
             // minimize use of outer pinky columns to reduce uncomfortable stretches
             // ESC / HYPER is repeated on thumb and pinky to reduce standard keyboard friction
