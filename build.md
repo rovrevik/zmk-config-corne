@@ -17,14 +17,11 @@ When you DON'T need zmk-modules:
 - Your config has a module.yml (which yours does)
 
 ```bash
-# start the devcontainer
-devcontainer up --workspace-folder "$(cd ../zmk && pwd)"
-# connect to the devcontainer
-docker exec -w /workspaces/zmk -it \
-  $(docker ps --format "{{.ID}}\t{{.Image}}" | grep zmk | awk '{print $1}') \
-  /bin/bash
+# on host
+open ./devcontainer.sh
 ```
 
+on zmk checkout or pull:
 ```bash
 west init -l app/ # Initialization (takes a very long time)
 west update       # Update modules
