@@ -462,6 +462,9 @@
             // | GRAVE | Z | X | C | V | B      |  | N    | M     | , | . | / |   |
             // |               |   | BSPC | TAB |  | BSPC | SPACE |   |           |
 
+            // minimize use of outer pinky columns to reduce uncomfortable stretches
+            // ESC / HYPER is repeated on thumb and pinky to reduce standard keyboard friction
+
             // deficiencies with left hand only operation: uncomfortable or awkward stretches
             // left hand GUI + TAB
             // https://github.com/urob/zmk-config?tab=readme-ov-file#swapper
