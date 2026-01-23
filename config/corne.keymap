@@ -15,6 +15,7 @@
 // Key positions for combos
 #define LGUI_KEY_POSITION 15
 #define LTHM_KEY_POSITION 37
+#define RT_RET_KEY_POSITION 39
 // timeout default 50ms
 // zmk/app/dts/bindings/zmk,combos.yaml
 #define COMBO_TIMEOUT_MS 100
@@ -439,6 +440,13 @@
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kt LGUI>;
             key-positions = <LGUI_KEY_POSITION LTHM_KEY_POSITION>;
+        };
+
+        // gui_return: prevent home row gui + ret triggering d then return
+        gui_return {
+            // the default timeout-ms works fine here
+            bindings = <&kp LG(RET)>;
+            key-positions = <LGUI_KEY_POSITION RT_RET_KEY_POSITION>;
         };
     };
 
