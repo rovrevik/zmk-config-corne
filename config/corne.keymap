@@ -303,8 +303,8 @@
         //     key-positions = <4 16>;
         // };
 
-        // pound {
-        //     bindings = <&kp POUND>;
+        // hash {
+        //     bindings = <&kp HASH>;
         //     key-positions = <3 15>;
         // };
 
@@ -349,7 +349,7 @@
         // };
 
         // underscore {
-        //     bindings = <&kp UNDER>;
+        //     bindings = <&kp UNDERSCORE>;
         //     key-positions = <30 18>;
         // };
 
@@ -498,11 +498,11 @@
          CURSOR {
             display-name = "Nav/num";
 
-            // | Left Half:                |    | Right Half:                            |
-            // |   | 1 | 2 | 3 | 4     | 5 |    | 6 | 7    | 8       | 9     |     0 |   |
-            // |   | ` |   |   | RET   |   |    |   | LEFT | DOWN    | UP    | RIGHT |   |
-            // |   |   |   |   | SPACE |   |    |   | HOME | PG_DOWN | PG_UP | END   |   |
-            // |           |   |       |   |    |   | DEL  |         |                   |
+            // | Left Half:                |    | Right Half:                          |
+            // |   | 1 | 2 | 3 | 4     | 5 |    | 6 | 7    | 8     | 9     |     0 |   |
+            // |   | ` |   |   | RET   |   |    |   | LEFT | DOWN  | UP    | RIGHT |   |
+            // |   |   |   |   | SPACE |   |    |   | HOME | PG_DN | PG_UP | END   |   |
+            // |           |   |       |   |    |   | DEL  |       |                   |
 
 // TODO: appswitch/tab combo not behaving as intended
 
@@ -525,8 +525,8 @@
 
 //             bindings = <
 // &trans  &kp N1  &kp N2    &kp N3       &kp N4           &kp N5           &kp N6   &kp N7        &kp N8        &kp N9        &kp N0  &trans
-// &caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &kp N0   &kp N4  &kp N5        &kp N6  &trans  &trans
-// &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
+// &caps_word  &trans  &trans    &kp UP  &browsertab      &kp PG_UP      &kp N0   &kp N4  &kp N5        &kp N6  &trans  &trans
+// &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PG_DN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
 //                           &kp LGUI      &trans           &kp SPACE        &kp RET  &trans        &trans
 //             >;
 //         };
@@ -541,7 +541,7 @@
             // |           |   |   |   |    |   |   |   |           |
 
             bindings = <
-&trans  &kp EXCL    &kp AT  &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR    &trans
+&trans  &kp EXCL    &kp AT  &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &trans
 &trans  &trans      &trans  &trans      &trans      &trans          &trans      &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
 &trans  &trans      &trans  &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans
                             &trans      &trans      &trans          &trans      &trans      &trans
