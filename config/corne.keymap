@@ -470,22 +470,16 @@
             // |  `  | Z | X | C   | V    | B   |  | N   | M     | , | . | / |   |
             // |             | ESC | BSPC | TAB |  | RET | SPACE |   |           |
 
+            // hyper and meh considerations:
+            // - hyper commonly is mapped to hold caps so it should be triggered with pinky
+            // - z and x are good candidates for hyper and meh because the letters are less frequently used
+
+            // GUI on left homerow + TAB on left inner thumb is comfortable for single hand use
+
             // minimize use of outer pinky columns to reduce uncomfortable stretches
             // repeated to reduce standard keyboard friction
             // - ESC / HYPER on thumb and pinky
             // - ` / GRAVE
-
-            // deficiencies with left hand only operation: uncomfortable or awkward stretches
-            // left hand GUI + TAB
-            // https://github.com/urob/zmk-config?tab=readme-ov-file#swapper
-            // right middle thumb layer and outer left inner index SPACE and RET (only on layers that are triggered by the left hand)
-            // GUI + FSLH to comment out lines
-
-            // GUI on left homerow + TAB on left inner thumb is comfortable for single hand use
-            // left pinky ESC is an awkward reach for dismissing completions
-            // right pink MINUS and UNDER is a long reach but it is deeply ingrained in my muscle memory
-            // rename CURSOR to NAV_NUM
-            // trigger home row mode shift on cursor layer on long hold
 
             bindings = <
 &none               &kp Q           &kp W           &kp E               &kp R                   &kp T                       &kp Y   &kp U               &kp I           &kp O           &kp P               &none
@@ -503,8 +497,6 @@
             // |   | ` |   |   | RET   |   |    |   | LEFT | DOWN  | UP    | RIGHT |   |
             // |   |   |   |   | SPACE |   |    |   | HOME | PG_DN | PG_UP | END   |   |
             // |           |   |       |   |    |   | DEL  |       |                   |
-
-// TODO: appswitch/tab combo not behaving as intended
 
             bindings = <
 &appswitch  &kp N1      &kp N2      &kp N3  &kp N4              &kp N5          &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
