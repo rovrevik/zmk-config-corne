@@ -519,10 +519,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&none               &kp Q           &kp W           &kp E               &kp R                   &kp T                       &kp Y   &kp U               &kp I           &kp O           &kp P               &none
-&hml_p LHYPER ESC   &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D       &hml_i LSHFT F          &kp G                       &kp H   &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
-&lt FUNCTION GRAVE  &hml_p LHYPER Z &hml_r LMEH X   &kp C               &kp V                   &kp B                       &kp N   &kp M               &kp COMMA       &hmr_r LMEH DOT &hmr_p LHYPER FSLH  &none
-                                                    &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM TAB       &kp RET &thumb_ht SYM SPACE &mo MOUSE
+&none              &kp Q           &kp W         &kp E               &kp R                 &kp T                          &kp Y &kp U          &kp I               &kp O           &kp P              &none
+&hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F        &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K       &hmr_r RALT L   &hmr_p LCTRL SEMI  &kp SQT
+&lt FUNCTION GRAVE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                 &kp B                          &kp N &kp M          &kp COMMA           &hmr_r LMEH DOT &hmr_p LHYPER FSLH &none
+                                                 &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC &thumb_ht NUM_SYM TAB          &kp RET              &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
 
@@ -538,10 +538,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&appswitch  &kp N1      &kp N2      &kp N3  &kp N4              &kp N5          &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&trans      &kp GRAVE   &trans      &trans  &hml_i LSHFT RET    &trans          &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
-&trans      &capsword   &windswitch &trans  &kp SPACE           &trans          &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
-                                    &trans  &trans              &trans          &kp DEL &trans      &trans
+&appswitch &kp N1    &kp N2      &kp N3 &kp N4           &kp N5          &kp N6  &kp N7   &kp N8    &kp N9    &kp N0    &trans
+&trans     &kp GRAVE &trans      &trans &hml_i LSHFT RET &trans          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans     &capsword &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_UP &kp PG_DN &kp END   &trans
+                                 &trans &trans           &trans          &kp DEL &trans   &trans
             >;
         };
 
@@ -556,10 +556,10 @@ started at "normal" and moving towards "faster".
             | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &kp N1  &kp N2    &kp N3       &kp N4           &kp N5           &kp N6   &kp N7        &kp N8        &kp N9        &kp N0  &trans
-&caps_word  &trans  &trans    &kp UP  &browsertab      &kp PG_UP      &kp N0   &kp N4  &kp N5        &kp N6  &trans  &trans
-&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PG_DN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
-                           &kp LGUI      &trans           &kp SPACE        &kp RET  &trans        &trans
+&trans     &kp N1 &kp N2   &kp N3   &kp N4      &kp N5             &kp N6  &kp N7 &kp N8 &kp N9 &kp N0 &trans
+&caps_word &trans &trans   &kp UP   &browsertab &kp PG_UP          &kp N0  &kp N4 &kp N5 &kp N6 &trans &trans
+&trans     &trans &kp LEFT &kp DOWN &kp RIGHT   &kp PG_DN          &trans  &kp N1 &kp N2 &kp N3 &trans &trans
+                           &kp LGUI &trans      &kp SPACE          &kp RET &trans &trans
             >;
         };
         */
@@ -576,10 +576,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&trans  &kp EXCL    &kp AT  &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &trans
-&trans  &trans      &trans  &trans      &trans      &trans          &trans      &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
-&trans  &trans      &trans  &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans
-                            &trans      &trans      &trans          &trans      &trans      &trans
+&trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT          &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &trans
+&trans &trans   &trans &trans   &trans   &trans             &trans    &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
+&trans &trans   &trans &trans   &trans   &trans             &trans    &trans    &trans    &trans   &trans   &trans
+                       &trans   &trans   &trans             &trans    &trans    &trans
             >;
         };
 
@@ -603,10 +603,10 @@ started at "normal" and moving towards "faster".
             // | ` | - | = | \ |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans      &kp N6  &kp N7  &kp N8  &kp N9      &kp N0      &trans
-&trans  &trans  &trans  &trans  &hml_i LSHFT RET    &trans      &trans  &kp N4  &kp N5  &kp LBKT    &kp RBKT    &kp EQUAL
-&trans  &trans  &trans  &trans  &kp SPACE           &trans      &trans  &kp N1  &kp N2  &kp N3      &trans      &trans
-                        &trans  &trans              &trans      &kp DEL &trans  &trans
+&trans &trans &trans &trans &trans           &trans          &kp N6 &kp N7 &kp N8 &kp N9   &kp N0   &trans
+&trans &trans &trans &trans &hml_i LSHFT RET &trans          &trans &kp N4 &kp N5 &kp LBKT &kp RBKT &kp EQUAL
+&trans &trans &trans &trans &kp SPACE        &trans          &trans &kp N1 &kp N2 &kp N3   &trans   &trans
+                     &trans &trans           &trans          &kp DEL &trans &trans
             >;
         };
 
@@ -622,10 +622,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5                &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock        &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL        &trans  &trans  &trans  &trans  &bootloader  &trans
-                                    &trans        &trans      &trans                &trans  &trans  &trans
+&trans &kp F1       &kp F2       &kp F3       &kp F4     &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10     &trans
+&trans &kp F11      &kp F12      &trans       &trans     &studio_unlock          &trans &trans &trans &trans &trans      &trans
+&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &bt BT_CLR_ALL          &trans &trans &trans &trans &bootloader &trans
+                                 &trans       &trans     &trans                  &trans &trans &trans
             >;
         };
 
@@ -633,10 +633,10 @@ started at "normal" and moving towards "faster".
         EXTRA {
             display-name = "Extra";
             bindings = <
-&trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_UP      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans          &trans           &trans            &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans          &trans           &trans            &trans  &trans  &trans
+&trans &trans &trans         &mmv MOVE_UP   &trans          &msc SCRL_UP            &trans &trans &trans &trans &trans &trans
+&trans &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN          &trans &trans &trans &trans &trans &trans
+&trans &trans &trans         &trans         &trans          &trans                  &trans &trans &trans &trans &trans &trans
+                             &trans         &trans          &trans                  &trans &trans &trans
             >;
         };
         */
@@ -646,10 +646,10 @@ started at "normal" and moving towards "faster".
         MOUSE {
             display-name = "Mouse";
             bindings = <
-&none   &none   &none           &mmv MOVE_UP    &none           &msc SCRL_UP        &none  &mkp LCLK        &mkp RCLK       &mkp MCLK       &none           &msc SCRL_UP
-&none   &none   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN      &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT &msc SCRL_DOWN
-&none   &none   &none           &none           &none           &none               &none  &none            &none           &none           &none           &none
-                                &none           &none           &none               &none  &none            &none
+&none &none &none          &mmv MOVE_UP   &none           &msc SCRL_UP            &none &mkp LCLK      &mkp RCLK      &mkp MCLK    &none           &msc SCRL_UP
+&none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN          &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &msc SCRL_DOWN
+&none &none &none          &none          &none           &none                   &none &none          &none          &none        &none           &none
+                           &none          &none           &none                   &none &none          &none
             >;
         };
 
@@ -660,10 +660,10 @@ started at "normal" and moving towards "faster".
         FUNCTION {
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &kp DEL &trans          &trans  &trans  &trans
+&trans &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
+                     &trans &kp DEL &trans          &trans &trans &trans
             >;
         };
     };
