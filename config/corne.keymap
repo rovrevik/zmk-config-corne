@@ -500,9 +500,9 @@ started at "normal" and moving towards "faster".
 
             /*
             | Left Half:                     |  | Right Half:                 |
-            |     | Q | W | E   | R    | T   |  | Y   | U     | I | O | P |   |
+            |  `  | Q | W | E   | R    | T   |  | Y   | U     | I | O | P | \ |
             | ESC | A | S | D   | F    | G   |  | H   | J     | K | L | ; | ' |
-            |  `  | Z | X | C   | V    | B   |  | N   | M     | , | . | / |   |
+            |     | Z | X | C   | V    | B   |  | N   | M     | , | . | / |   |
             |             | ESC | BSPC | TAB |  | RET | SPACE |   |           |
             */
 
@@ -512,16 +512,30 @@ started at "normal" and moving towards "faster".
             - z and x are good candidates for hyper and meh because the letters are less frequently used
             GUI on left homerow + TAB on left inner thumb is comfortable for single hand use
             minimize use of outer pinky columns to reduce uncomfortable stretches
-            repeated to reduce standard keyboard friction
-            - ESC / HYPER on thumb and pinky
-            - ` / GRAVE
-            - FUNCTION layer
+
+            repeated to reduce standard keyboard friction:
+            - ESC: pinky ESC is an awkward reach for dismissing completions
+                - left thumb outer
+                - legacy: left pinky middle outer
+            - ` (GRAVE):
+                - left pinky middle inner (on layer)
+                - legacy: left pinky outer upper
+            - \ (BSLH):
+                - right pinky inner lower (on layer)
+                - legacy: right pinky outer upper
+            - ' (SQT):
+                - legacy: left pinky middle outer
+            - HYPER:
+                - left pinky inner z (hold)
+                - legacy: left pinky middle outer (hold)
+            - FUNCTION layer:
+                - legacy: left pinky outer lower
             */
 
             bindings = <
-&none              &kp Q           &kp W         &kp E               &kp R                 &kp T                          &kp Y &kp U          &kp I               &kp O           &kp P              &none
+&kp GRAVE          &kp Q           &kp W         &kp E               &kp R                 &kp T                          &kp Y &kp U          &kp I               &kp O           &kp P              &kp BSLH
 &hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F        &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K       &hmr_r RALT L   &hmr_p LCTRL SEMI  &kp SQT
-&lt FUNCTION GRAVE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                 &kp B                          &kp N &kp M          &kp COMMA           &hmr_r LMEH DOT &hmr_p LHYPER FSLH &none
+&lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                 &kp B                          &kp N &kp M          &kp COMMA           &hmr_r LMEH DOT &hmr_p LHYPER FSLH &none
                                                  &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC &thumb_ht NUM_SYM TAB          &kp RET              &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
@@ -570,15 +584,15 @@ started at "normal" and moving towards "faster".
             /*
             | Left Half:            |    | Right Half:           |
             |   | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |   |
-            |   |   |   |   |   |   |    |   | - | = | [ | ] | \ |
-            |   |   |   |   |   |   |    |   |   |   |   |   |   |
+            |   |   |   |   |   |   |    |   | - | = | [ | ] |   |
+            |   |   |   |   |   |   |    |   |   |   |   | \ |   |
             |           |   |   |   |    |   |   |   |           |
             */
 
             bindings = <
 &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT          &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &trans
-&trans &trans   &trans &trans   &trans   &trans             &trans    &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
-&trans &trans   &trans &trans   &trans   &trans             &trans    &trans    &trans    &trans   &trans   &trans
+&trans &trans   &trans &trans   &trans   &trans             &trans    &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &trans
+&trans &trans   &trans &trans   &trans   &trans             &trans    &trans    &trans    &trans   &kp BSLH &trans
                        &trans   &trans   &trans             &trans    &trans    &trans
             >;
         };
