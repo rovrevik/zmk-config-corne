@@ -438,6 +438,12 @@
             key-positions = <LGUI_KEY_POSITION 24>;
         };
 
+        /*
+        combo_toggle_gui: toggle gui can get a little confusing.
+        not clear when it is enabled
+        can tell be context menus not showing up
+        has triggered gui + d and accidentally deleted stuff
+        */
         combo_toggle_gui {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kt LGUI>;
