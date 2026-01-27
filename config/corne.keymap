@@ -5,7 +5,7 @@
 
 // layer indexes
 #define DEF 0
-#define CURSOR 1
+#define NAV_NUM 1
 // #define NAV 2
 #define SYM 2
 #define NUM_SYM 3
@@ -533,15 +533,15 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&kp GRAVE          &kp Q           &kp W         &kp E               &kp R                 &kp T                          &kp Y &kp U          &kp I               &kp O           &kp P              &kp BSLH
-&hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F        &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K       &hmr_r RALT L   &hmr_p LCTRL SEMI  &kp SQT
-&lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                 &kp B                          &kp N &kp M          &kp COMMA           &hmr_r LMEH DOT &hmr_p LHYPER FSLH &none
-                                                 &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC &thumb_ht NUM_SYM TAB          &kp RET              &thumb_ht SYM SPACE &mo MOUSE
+&kp GRAVE          &kp Q           &kp W         &kp E               &kp R                  &kp T                          &kp Y &kp U          &kp I               &kp O           &kp P              &kp BSLH
+&hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F         &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K       &hmr_r RALT L   &hmr_p LCTRL SEMI  &kp SQT
+&lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                  &kp B                          &kp N &kp M          &kp COMMA           &hmr_r LMEH DOT &hmr_p LHYPER FSLH &none
+                                                 &thumb_ht MOUSE ESC &thumb_ht NAV_NUM BSPC &thumb_ht NUM_SYM TAB          &kp RET              &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
 
-         CURSOR {
-            display-name = "Nav/num";
+        NAV_NUM {
+            display-name = "NavNum";
 
             /*
             | Left Half:                |    | Right Half:                          |
@@ -561,7 +561,7 @@ started at "normal" and moving towards "faster".
 
         /*
         NAV {
-            display-name = "NavNum";
+            display-name = "Nav";
 
             -------------------------------------------------------------------------------
             |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -686,7 +686,7 @@ started at "normal" and moving towards "faster".
         compatible = "zmk,conditional-layers";
 
         l3 {
-            if-layers = <CURSOR SYM>;
+            if-layers = <NAV_NUM SYM>;
             then-layer = <ADJ>;
         };
     };
