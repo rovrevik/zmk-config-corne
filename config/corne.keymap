@@ -597,30 +597,45 @@ started at "normal" and moving towards "faster".
             >;
         };
 
+        /*
+        NUM_SYM: num and sym layer
+        experimental layer
+        settled:
+        - num row: 1234567890 (mostly normal number pad)
+        - num row (shift): !@#$%^&*()
+        - base layer: ,./
+        - base layer (shift): <>?
+
+        not settled:
+        - num row: -= (somewhat normal number pad)
+        - num row (shift): _+ (somewhat normal number pad)
+        - base layer: '
+        - base layer (shift): "
+        - []\
+        - {}|
+        */
         NUM_SYM {
-            display-name = "Num/Sym";
+            display-name = "NumSym";
 
             /*
-            | Left Half:                 |    | Right Half:             |
-            |   |   |   |   |        |   |    | 6   | 7 | 8 | 9 | 0 |   |
-            |   |   |   |   | RET    |   |    |     | 4 | 5 | [ | ] | = |
-            |   |   |   |   | SPACE  |   |    |     | 1 | 2 | 3 |   |   |
-            |           |   |        |   |    | DEL |   |   |           |
+            | Left Half:            |     | Right Half:           |
+            |   |   |   |   | [ | ] |     | \ | 7 | 8 | 9 | 0 |   |
+            |   |   |   |   |   |   |     | ' | 4 | 5 | 6 | - |   |
+            |   |   |   |   |   |   |     |   | 1 | 2 | 3 | = |   |
+            |           |   |   |   |     |   |   |           |   |
 
-            | Left Half:                 |    | Right Half:           |
-            |   |   |   |   |   |        |    | ^ | & | * | ( | ) |   |  
-            |   |   |   |   |   |        |    |   | $ | % | { | } | + |
-            |   |   |   |   |   |        |    |   | ! | @ | # |   |   |
-            |           |   |   |        |    |   |   |   |           |
+            | Left Half:            |     | Right Half:           |
+            |   |   |   |   | { | } |     | | | & | * | ( | ) |   |  
+            |   |   |   |   |   |   |     | " | $ | % | ^ | _ |   |
+            |   |   |   |   |   |   |     |   | ! | @ | # | + |   |
+            |           |   |   |   |     |   |   |   |           |
             */
 
-            // | ` | - | = | \ |
-
             bindings = <
-&trans &trans &trans &trans &trans           &trans          &kp N6 &kp N7 &kp N8 &kp N9   &kp N0   &trans
-&trans &trans &trans &trans &hml_i LSHFT RET &trans          &trans &kp N4 &kp N5 &kp LBKT &kp RBKT &kp EQUAL
-&trans &trans &trans &trans &kp SPACE        &trans          &trans &kp N1 &kp N2 &kp N3   &trans   &trans
-                     &trans &trans           &trans          &kp DEL &trans &trans
+&trans &trans &trans &trans &kp LBKT &kp RBKT        &kp BSLH &kp N7          &kp N8         &kp N9         &kp N0              &trans
+&trans &trans &trans &trans &trans   &trans          &kp SQT  &hmr_i RSHFT N4 &hmr_m RGUI N5 &hmr_r RALT N6 &hmr_p LCTRL MINUS  &trans
+&trans &trans &trans &trans &trans   &trans          &trans   &kp N1          &kp N2         &hmr_r LMEH N3 &hmr_p LHYPER EQUAL &trans
+                     &trans &trans   &trans          &trans   &trans &trans
             >;
         };
 
