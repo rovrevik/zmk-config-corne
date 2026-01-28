@@ -9,7 +9,7 @@
 // #define NAV 2
 #define SYM 2
 #define NUM_SYM 3
-#define ADJ 4
+#define SYSTEM 4
 #define MOUSE 5
 #define FUNCTION 6
 // #define EXTRA 4
@@ -639,7 +639,7 @@ started at "normal" and moving towards "faster".
             >;
         };
 
-        ADJ {
+        SYSTEM {
             display-name = "System";
 
             /*
@@ -702,7 +702,7 @@ started at "normal" and moving towards "faster".
 
         l3 {
             if-layers = <NAV_NUM SYM>;
-            then-layer = <ADJ>;
+            then-layer = <SYSTEM>;
         };
     };
 };
