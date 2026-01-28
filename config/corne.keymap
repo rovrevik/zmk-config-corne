@@ -545,7 +545,7 @@ started at "normal" and moving towards "faster".
 
             /*
             | Left Half:                |    | Right Half:                          |
-            |   | 1 | 2 | 3 | 4     | 5 |    | 6 | 7    | 8     | 9     |     0 |   |
+            |   | 1 | 2 | 3 | 4     | 5 |    | 6 | 7    | 8     | 9     | 0     |   |
             |   | ` |   |   | RET   |   |    |   | LEFT | DOWN  | UP    | RIGHT |   |
             |   |   |   |   | SPACE |   |    |   | HOME | PG_DN | PG_UP | END   |   |
             |           |   |       |   |    |   | DEL  |       |                   |
