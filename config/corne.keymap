@@ -35,7 +35,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define RIGHT_KEY_POSITIONS 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41
 #define LEFT_KEY_POSITIONS 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38
 #define LHYPER LC(LA(LG(LSHFT)))
+#define RHYPER RC(RA(RG(RSHFT)))
 #define LMEH LC(LA(LSHFT))
+#define RMEH RC(RA(RSHFT))
 
 /*
 homerow timings
@@ -534,8 +536,8 @@ started at "normal" and moving towards "faster".
 
             bindings = <
 &kp GRAVE          &kp Q           &kp W         &kp E               &kp R                  &kp T                          &kp Y &kp U          &kp I               &kp O           &kp P              &kp BSLH
-&hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F         &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K       &hmr_r RALT L   &hmr_p LCTRL SEMI  &kp SQT
-&lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                  &kp B                          &kp N &kp M          &kp COMMA           &hmr_r LMEH DOT &hmr_p LHYPER FSLH &none
+&hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F         &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K       &hmr_r RALT L   &hmr_p RCTRL SEMI  &kp SQT
+&lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                  &kp B                          &kp N &kp M          &kp COMMA           &hmr_r RMEH DOT &hmr_p RHYPER FSLH &none
                                                  &thumb_ht MOUSE ESC &thumb_ht NAV_NUM BSPC &thumb_ht NUM_SYM TAB          &kp RET              &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
@@ -633,8 +635,8 @@ started at "normal" and moving towards "faster".
 
             bindings = <
 &trans &trans &trans &trans &kp LBKT          &kp RBKT        &kp BSLH &kp N7          &kp N8         &kp N9         &kp N0              &trans
-&trans &trans &trans &trans &hml_i LSHFT LBRC &kp LBRC        &kp SQT  &hmr_i RSHFT N4 &hmr_m RGUI N5 &hmr_r RALT N6 &hmr_p LCTRL MINUS  &trans
-&trans &trans &trans &trans &kp LPAR          &kp LPAR        &kp DQT  &kp N1          &kp N2         &hmr_r LMEH N3 &hmr_p LHYPER EQUAL &trans
+&trans &trans &trans &trans &hml_i LSHFT LBRC &kp LBRC        &kp SQT  &hmr_i RSHFT N4 &hmr_m RGUI N5 &hmr_r RALT N6 &hmr_p RCTRL MINUS  &trans
+&trans &trans &trans &trans &kp LPAR          &kp LPAR        &kp DQT  &kp N1          &kp N2         &hmr_r RMEH N3 &hmr_p RHYPER EQUAL &trans
                      &trans &trans            &trans          &trans   &trans &trans
             >;
         };
