@@ -19,6 +19,8 @@
 #define LGUI_KEY_POSITION 15
 #define LTHM_KEY_POSITION 37
 #define RT_RET_KEY_POSITION 39
+#define GRAVE_KEY_POSITION 1
+#define GRAVE_KEY_POSITION_CTRL 13
 /*
 timeout default 50ms
 zmk/app/dts/bindings/zmk,combos.yaml
@@ -485,6 +487,13 @@ started at "normal" and moving towards "faster".
             bindings = <&kp LG(RET)>;
             key-positions = <LGUI_KEY_POSITION RT_RET_KEY_POSITION>;
         };
+
+        // ctrl_grave: open/focus on the terminal
+        ctrl_grave {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
+            bindings = <&kp LC(GRAVE)>;
+            key-positions = <GRAVE_KEY_POSITION GRAVE_KEY_POSITION_CTRL>;
+        };
     };
 
     //
@@ -550,18 +559,18 @@ started at "normal" and moving towards "faster".
             display-name = "Cursor";
 
             /*
-            | Left Half:                    |    | Right Half:                          |
-            |   | `     |   |   |       |   |    |   |      |       |       |       |   |
-            |   | LC(`) |   |   | RET   |   |    |   | LEFT | DOWN  | UP    | RIGHT |   |
-            |   |       |   |   | SPACE |   |    |   | HOME | PG_DN | PG_UP | END   |   |
-            |               |   |       |   |    |   | DEL  |       |                   |
+            | Left Half:                |    | Right Half:                          |
+            |   | ` |   |   |       |   |    |   |      |       |       |       |   |
+            |   |   |   |   | RET   |   |    |   | LEFT | DOWN  | UP    | RIGHT |   |
+            |   |   |   |   | SPACE |   |    |   | HOME | PG_DN | PG_UP | END   |   |
+            |           |   |       |   |    |   | DEL  |       |                   |
             */
 
             bindings = <
-&trans &kp GRAVE     &trans      &trans &trans           &trans          &trans  &trans   &trans    &trans    &trans    &trans
-&trans &kp LC(GRAVE) &trans      &trans &hml_i LSHFT RET &trans          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans &capsword     &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
-                                 &trans &trans           &trans          &kp DEL &trans   &trans
+&trans &kp GRAVE &trans      &trans &trans           &trans          &trans  &trans   &trans    &trans    &trans    &trans
+&trans &trans    &trans      &trans &hml_i LSHFT RET &trans          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans &capsword &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
+                             &trans &trans           &trans          &kp DEL &trans   &trans
             >;
         };
 
