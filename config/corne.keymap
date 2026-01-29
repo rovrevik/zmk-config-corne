@@ -43,6 +43,19 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define LMEH LC(LA(LSHFT))
 #define RMEH RC(RA(RSHFT))
 
+// add leading _ to prevent conflicts with ZMK
+#define _CUT LG(X)
+#define _COPY LG(C)
+#define _PASTE LG(V)
+#define _UNDO LG(Z)
+
+#define _QUIT LG(Q)
+#define _CLOSE LG(W)
+#define _REFRESH LG(R)
+#define _SAVE LG(S)
+#define _FIND LG(F)
+#define _FIND_AGAIN LG(G)
+
 /*
 homerow timings
 For advanced tuning of HRM values, see: ZMK HRM Best Practice Values [SUNAKU]
@@ -560,18 +573,20 @@ started at "normal" and moving towards "faster".
             display-name = "Cursor";
 
             /*
-            | Left Half:                |    | Right Half:                          |
-            |   |   |   |   |       |   |    |   |      |       |       |       |   |
-            |   |   |   |   | RET   |   |    |   | LEFT | DOWN  | UP    | RIGHT |   |
-            |   |   |   |   | SPACE |   |    |   | HOME | PG_DN | PG_UP | END   |   |
-            |           |   |       |   |    |   | DEL  |       |                   |
+            | Left Half:                                             |   | Right Half:                          |
+            |          | QUIT | CLOSE | SPACE | REFRESH | RET        |   |   |      |       |       |       |   |
+            | capsword |      | SAVE  |       | FIND    | FIND_AGAIN |   |   | LEFT | DOWN  | UP    | RIGHT |   |
+            |          | UNDO | CUT   | COPY  | PASTE   |            |   |   | HOME | PG_DN | PG_UP | END   |   |
+            |                         |       |         |            |   |   | DEL  |       |                   |
             */
 
+            // SPACE and RET are intentionally not on home row mod keys so there is repeat triggering
+
             bindings = <
-&trans &trans    &trans      &trans &trans           &trans          &trans  &trans   &trans    &trans    &trans    &trans
-&trans &trans    &trans      &trans &hml_i LSHFT RET &trans          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans &capsword &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
-                             &trans &trans           &trans          &kp DEL &trans   &trans
+&trans    &kp _QUIT           &kp _CLOSE        &kp SPACE &kp _REFRESH       &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
+&capsword &trans              &hml_r LALT _SAVE &trans    &hml_i LSHFT _FIND &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans    &hml_p LHYPER _UNDO &hml_r LMEH _CUT  &kp _COPY &kp _PASTE         &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
+                                                &trans    &trans             &trans                   &kp DEL &trans   &trans
             >;
         };
 
