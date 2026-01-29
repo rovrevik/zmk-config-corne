@@ -590,23 +590,23 @@ started at "normal" and moving towards "faster".
 
             /*
             | Left Half:            |     | Right Half:           |
-            |   | ` |   |   | ( | ) |     | \ | 7 | 8 | 9 | 0 |   |
-            |   |   |   |   | [ | ] |     | ' | 4 | 5 | 6 | - |   |
-            |   |   |   |   | { | } |     | " | 1 | 2 | 3 | = |   |
+            |   | ` |   | ( | ) |   |     | \ | 7 | 8 | 9 | 0 |   |
+            |   |   |   | [ | ] |   |     | ' | 4 | 5 | 6 | - |   |
+            |   |   |   | { | } |   |     | " | 1 | 2 | 3 | = |   |
             |           |   |   |   |     |   |   |           |   |
 
             | Left Half:            |     | Right Half:           |
-            |   | ~ |   |   | ( | ) |     | | | & | * |   |   |   |
-            |   |   |   |   | [ | ] |     | " | $ | % | ^ | _ |   |
-            |   |   |   |   | { | } |     | " | ! | @ | # | + |   |
+            |   | ~ |   | ( | ) |   |     | | | & | * |   |   |   |
+            |   |   |   | [ | ] |   |     | " | $ | % | ^ | _ |   |
+            |   |   |   | { | } |   |     | " | ! | @ | # | + |   |
             |           |   |   |   |     |   |   |   |           |
             */
 
             bindings = <
-&trans &kp GRAVE     &trans &trans &kp LPAR          &kp RPAR          &kp BSLH     &kp N7              &kp N8             &kp N9             &kp N0                  &trans
-&trans &trans        &trans &trans &hml_i LSHFT LBKT &kp RBKT          &kp SQT      &hmr_i RSHFT N4     &hmr_m RGUI N5     &hmr_r RALT N6     &hmr_p RCTRL MINUS      &trans
-&trans &trans        &trans &trans &kp LBRC          &kp RBRC          &kp DQT      &kp N1              &kp N2             &hmr_r RMEH N3     &hmr_p RHYPER EQUAL     &trans
-                            &trans &trans            &trans            &trans       &trans &trans
+&trans &kp GRAVE     &trans &kp LPAR         &kp RPAR          &trans          &kp BSLH     &kp N7              &kp N8             &kp N9             &kp N0                  &trans
+&trans &trans        &trans &hml_m LGUI LBKT &hml_i LSHFT RBKT &trans          &kp SQT      &hmr_i RSHFT N4     &hmr_m RGUI N5     &hmr_r RALT N6     &hmr_p RCTRL MINUS      &trans
+&trans &trans        &trans &kp LBRC         &kp RBRC          &trans          &kp DQT      &kp N1              &kp N2             &hmr_r RMEH N3     &hmr_p RHYPER EQUAL     &trans
+                            &trans           &trans            &trans          &trans       &trans &trans
             >;
         };
 
@@ -614,10 +614,10 @@ started at "normal" and moving towards "faster".
             display-name = "SymPad";
 
             bindings = <
-&trans &kp LS(GRAVE) &trans &trans &kp LPAR          &kp RPAR          &kp LS(BSLH) &kp LS(N7)          &kp LS(N8)         &trans             &trans                  &trans
-&trans &trans        &trans &trans &hml_i LSHFT LBKT &kp RBKT          &kp SQT      &hmr_i RSHFT LS(N4) &hmr_m RGUI LS(N5) &hmr_r RALT LS(N6) &hmr_p RCTRL LS(MINUS)  &trans
-&trans &trans        &trans &trans &kp LBRC          &kp RBRC          &kp DQT      &kp LS(N1)          &kp LS(N2)         &hmr_r RMEH LS(N3) &hmr_p RHYPER LS(EQUAL) &trans
-                            &trans &trans            &trans            &trans       &trans              &trans
+&trans &kp LS(GRAVE) &trans &kp LPAR         &kp RPAR          &trans           &kp LS(BSLH) &kp LS(N7)          &kp LS(N8)         &trans             &trans                  &trans
+&trans &trans        &trans &hml_m LGUI LBKT &hml_i LSHFT RBKT &trans           &kp SQT      &hmr_i RSHFT LS(N4) &hmr_m RGUI LS(N5) &hmr_r RALT LS(N6) &hmr_p RCTRL LS(MINUS)  &trans
+&trans &trans        &trans &kp LBRC         &kp RBRC          &trans           &kp DQT      &kp LS(N1)          &kp LS(N2)         &hmr_r RMEH LS(N3) &hmr_p RHYPER LS(EQUAL) &trans
+                            &trans           &trans            &trans           &trans       &trans              &trans
             >;
         };
 
