@@ -540,7 +540,7 @@ started at "normal" and moving towards "faster".
 &kp GRAVE          &kp Q           &kp W         &kp E               &kp R                  &kp T                          &kp Y &kp U          &kp I                   &kp O           &kp P              &kp BSLH
 &hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F         &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K           &hmr_r RALT L   &hmr_p RCTRL SEMI  &kp SQT
 &lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                  &kp B                          &kp N &kp M          &kp COMMA               &hmr_r RMEH DOT &hmr_p RHYPER FSLH &none
-                                                 &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC  &thumb_ht SYM_PAD TAB          &kp RET              &thumb_ht NUM_PAD SPACE &mo MOUSE
+                                                 &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC  &thumb_ht NUM_PAD TAB          &kp RET              &thumb_ht SYM_PAD SPACE &mo MOUSE
             >;
         };
 
@@ -558,7 +558,7 @@ started at "normal" and moving towards "faster".
             bindings = <
 &appswitch &kp GRAVE     &trans      &trans &trans           &trans          &trans  &trans   &trans    &trans    &trans    &trans
 &trans     &kp LC(GRAVE) &trans      &trans &hml_i LSHFT RET &trans          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans     &capsword     &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_UP &kp PG_DN &kp END   &trans
+&trans     &capsword     &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
                                      &trans &trans           &trans          &kp DEL &trans   &trans
             >;
         };
@@ -616,22 +616,22 @@ started at "normal" and moving towards "faster".
 
             /*
             | Left Half:            |     | Right Half:           |
-            |   | ` |   |   | [ | ] |     | \ | 7 | 8 | 9 | 0 |   |
-            |   |   |   |   | { | } |     | ' | 4 | 5 | 6 | - |   |
-            |   |   |   |   | ( | ) |     | " | 1 | 2 | 3 | = |   |
+            |   | ` |   |   | ( | ) |     | \ | 7 | 8 | 9 | 0 |   |
+            |   |   |   |   | [ | ] |     | ' | 4 | 5 | 6 | - |   |
+            |   |   |   |   | { | } |     | " | 1 | 2 | 3 | = |   |
             |           |   |   |   |     |   |   |           |   |
 
             | Left Half:            |     | Right Half:           |
-            |   | ~ |   |   | { | } |     | | | & | * | ( | ) |   |
-            |   |   |   |   | { | } |     | " | $ | % | ^ | _ |   |
-            |   |   |   |   | ( | ) |     | " | ! | @ | # | + |   |
+            |   | ~ |   |   | ( | ) |     | | | & | * |   |   |   |
+            |   |   |   |   | [ | ] |     | " | $ | % | ^ | _ |   |
+            |   |   |   |   | { | } |     | " | ! | @ | # | + |   |
             |           |   |   |   |     |   |   |   |           |
             */
 
             bindings = <
-&trans &kp GRAVE     &trans &trans &kp LBKT          &kp RBKT          &kp BSLH     &kp N7              &kp N8             &kp N9             &kp N0                  &trans
-&trans &trans        &trans &trans &hml_i LSHFT LBRC &kp RBRC          &kp SQT      &hmr_i RSHFT N4     &hmr_m RGUI N5     &hmr_r RALT N6     &hmr_p RCTRL MINUS      &trans
-&trans &trans        &trans &trans &kp LPAR          &kp RPAR          &kp DQT      &kp N1              &kp N2             &hmr_r RMEH N3     &hmr_p RHYPER EQUAL     &trans
+&trans &kp GRAVE     &trans &trans &kp LPAR          &kp RPAR          &kp BSLH     &kp N7              &kp N8             &kp N9             &kp N0                  &trans
+&trans &trans        &trans &trans &hml_i LSHFT LBKT &kp RBKT          &kp SQT      &hmr_i RSHFT N4     &hmr_m RGUI N5     &hmr_r RALT N6     &hmr_p RCTRL MINUS      &trans
+&trans &trans        &trans &trans &kp LBRC          &kp RBRC          &kp DQT      &kp N1              &kp N2             &hmr_r RMEH N3     &hmr_p RHYPER EQUAL     &trans
                             &trans &trans            &trans            &trans       &trans &trans
             >;
         };
@@ -640,9 +640,9 @@ started at "normal" and moving towards "faster".
             display-name = "SymPad";
 
             bindings = <
-&trans &kp LS(GRAVE) &trans &trans &kp LBKT          &kp RBKT          &kp LS(BSLH) &kp LS(N7)          &kp LS(N8)         &kp LS(N9)         &kp LS(N0)              &trans
-&trans &trans        &trans &trans &hml_i LSHFT LBRC &kp RBRC          &kp SQT      &hmr_i RSHFT LS(N4) &hmr_m RGUI LS(N5) &hmr_r RALT LS(N6) &hmr_p RCTRL LS(MINUS)  &trans
-&trans &trans        &trans &trans &kp LPAR          &kp RPAR          &kp DQT      &kp LS(N1)          &kp LS(N2)         &hmr_r RMEH LS(N3) &hmr_p RHYPER LS(EQUAL) &trans
+&trans &kp LS(GRAVE) &trans &trans &kp LPAR          &kp RPAR          &kp LS(BSLH) &kp LS(N7)          &kp LS(N8)         &trans             &trans                  &trans
+&trans &trans        &trans &trans &hml_i LSHFT LBKT &kp RBKT          &kp SQT      &hmr_i RSHFT LS(N4) &hmr_m RGUI LS(N5) &hmr_r RALT LS(N6) &hmr_p RCTRL LS(MINUS)  &trans
+&trans &trans        &trans &trans &kp LBRC          &kp RBRC          &kp DQT      &kp LS(N1)          &kp LS(N2)         &hmr_r RMEH LS(N3) &hmr_p RHYPER LS(EQUAL) &trans
                             &trans &trans            &trans            &trans       &trans              &trans
             >;
         };
@@ -709,7 +709,7 @@ started at "normal" and moving towards "faster".
         compatible = "zmk,conditional-layers";
 
         l3 {
-            if-layers = <CURSOR NUM_PAD>;
+            if-layers = <CURSOR SYM_PAD>;
             then-layer = <FCN_PAD>;
         };
     };
