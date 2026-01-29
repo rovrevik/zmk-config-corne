@@ -605,18 +605,11 @@ started at "normal" and moving towards "faster".
         NUM_PAD: num and sym layer
         experimental layer
         settled:
-        - num row: 1234567890 (mostly normal number pad)
-        - num row (shift): !@#$%^&*()
-        - base layer: ,./
-        - base layer (shift): <>?
-
-        not settled:
-        - num row: -= (somewhat normal number pad)
-        - num row (shift): _+ (somewhat normal number pad)
-        - base layer: '
-        - base layer (shift): "
-        - []\
-        - {}|
+        - num row: 1234567890 (shift): !@#$%^&*() (mostly normal number pad)
+        - num row: -= (shift): _+ (somewhat normal number pad)
+        - top row: []\ (shift): {}|
+        - middle row: ' (shift): "
+        - bottom row: ,./ (shift): <>?
         */
         NUM_PAD {
             display-name = "NumPad";
