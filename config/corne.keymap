@@ -15,18 +15,6 @@
 // #define SYM 8
 // #define EXTRA 9
 
-// Key positions for combos
-#define LGUI_KEY_POSITION 15
-#define LTHM_KEY_POSITION 37
-#define RT_RET_KEY_POSITION 39
-#define GRAVE_KEY_POSITION 1
-#define GRAVE_KEY_POSITION_CTRL 13
-/*
-timeout default 50ms
-zmk/app/dts/bindings/zmk,combos.yaml
-*/
-#define COMBO_TIMEOUT_MS 140
-
 /*
 | Left Half:                  |  | Right Half:                 |
 | 00 | 01 | 02 | 03 | 04 | 05 |  | 06 | 07 | 08 | 09 | 10 | 11 |
@@ -37,6 +25,19 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
 #define RIGHT_KEY_POSITIONS 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41
 #define LEFT_KEY_POSITIONS 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38
+// Key positions for combos
+#define LGUI_KEY_POSITION 15
+#define LTHM_KEY_POSITION 37
+#define RT_RET_KEY_POSITION 39
+#define GRAVE_KEY_POSITION 1
+#define GRAVE_KEY_POSITION_CTRL 13
+
+/*
+timeout default 50ms
+zmk/app/dts/bindings/zmk,combos.yaml
+*/
+#define COMBO_TIMEOUT_MS 140
+
 #define LHYPER LC(LA(LG(LSHFT)))
 #define RHYPER RC(RA(RG(RSHFT)))
 #define LMEH LC(LA(LSHFT))
