@@ -7,8 +7,9 @@
 #define BASE 0
 #define CURSOR 1
 // #define NAV 2
-#define SYM 2
-#define NUM_PAD 3
+// #define SYM 2
+#define NUM_PAD 2
+#define SYM_PAD 3
 #define FCN_PAD 4
 #define MOUSE 5
 #define FUNCTION 6
@@ -536,10 +537,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&kp GRAVE          &kp Q           &kp W         &kp E               &kp R                  &kp T                          &kp Y &kp U          &kp I               &kp O           &kp P              &kp BSLH
-&hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F         &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K       &hmr_r RALT L   &hmr_p RCTRL SEMI  &kp SQT
-&lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                  &kp B                          &kp N &kp M          &kp COMMA           &hmr_r RMEH DOT &hmr_p RHYPER FSLH &none
-                                                 &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC  &thumb_ht NUM_PAD TAB          &kp RET              &thumb_ht SYM SPACE &mo MOUSE
+&kp GRAVE          &kp Q           &kp W         &kp E               &kp R                  &kp T                          &kp Y &kp U          &kp I                   &kp O           &kp P              &kp BSLH
+&hml_p LHYPER ESC  &hml_p LCTRL A  &hml_r LALT S &hml_m LGUI D       &hml_i LSHFT F         &kp G                          &kp H &hmr_i RSHFT J &hmr_m RGUI K           &hmr_r RALT L   &hmr_p RCTRL SEMI  &kp SQT
+&lt FUNCTION GLOBE &hml_p LHYPER Z &hml_r LMEH X &kp C               &kp V                  &kp B                          &kp N &kp M          &kp COMMA               &hmr_r RMEH DOT &hmr_p RHYPER FSLH &none
+                                                 &thumb_ht MOUSE ESC &thumb_ht CURSOR BSPC  &thumb_ht SYM_PAD TAB          &kp RET              &thumb_ht NUM_PAD SPACE &mo MOUSE
             >;
         };
 
@@ -581,16 +582,15 @@ started at "normal" and moving towards "faster".
         };
         */
 
+        /*
         SYM {
             display-name = "Symbols";
 
-            /*
             | Left Half:            |    | Right Half:           |
             |   | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |   |
             |   |   |   |   |   |   |    |   | - | = | [ | ] |   |
             |   |   |   |   |   |   |    |   |   |   |   | \ |   |
             |           |   |   |   |    |   |   |   |           |
-            */
 
             bindings = <
 &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT          &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &trans
@@ -599,6 +599,7 @@ started at "normal" and moving towards "faster".
                        &trans   &trans   &trans             &trans    &trans    &trans
             >;
         };
+        */
 
         /*
         NUM_PAD: num and sym layer
@@ -635,10 +636,21 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&trans &kp LC(GRAVE) &trans &trans &kp LBKT          &kp RBKT        &kp BSLH     &kp N7              &kp N8             &kp N9             &kp N0              &trans
-&trans &trans        &trans &trans &hml_i LSHFT LBRC &kp RBRC        &kp SQT      &hmr_i RSHFT N4     &hmr_m RGUI N5     &hmr_r RALT N6     &hmr_p RCTRL MINUS  &trans
-&trans &trans        &trans &trans &kp LPAR          &kp RPAR        &kp DQT      &kp N1              &kp N2             &hmr_r RMEH N3     &hmr_p RHYPER EQUAL &trans
-                            &trans &trans            &trans          &trans       &trans &trans
+&trans &kp LC(GRAVE) &trans &trans &kp LBKT          &kp RBKT          &kp BSLH     &kp N7              &kp N8             &kp N9             &kp N0                  &trans
+&trans &trans        &trans &trans &hml_i LSHFT LBRC &kp RBRC          &kp SQT      &hmr_i RSHFT N4     &hmr_m RGUI N5     &hmr_r RALT N6     &hmr_p RCTRL MINUS      &trans
+&trans &trans        &trans &trans &kp LPAR          &kp RPAR          &kp DQT      &kp N1              &kp N2             &hmr_r RMEH N3     &hmr_p RHYPER EQUAL     &trans
+                            &trans &trans            &trans            &trans       &trans &trans
+            >;
+        };
+
+        SYM_PAD {
+            display-name = "SymPad";
+
+            bindings = <
+&trans &kp LC(GRAVE) &trans &trans &kp LBKT          &kp RBKT          &kp LS(BSLH) &kp LS(N7)          &kp LS(N8)         &kp LS(N9)         &kp LS(N0)              &trans
+&trans &trans        &trans &trans &hml_i LSHFT LBRC &kp RBRC          &kp SQT      &hmr_i RSHFT LS(N4) &hmr_m RGUI LS(N5) &hmr_r RALT LS(N6) &hmr_p RCTRL LS(MINUS)  &trans
+&trans &trans        &trans &trans &kp LPAR          &kp RPAR          &kp DQT      &kp LS(N1)          &kp LS(N2)         &hmr_r RMEH LS(N3) &hmr_p RHYPER LS(EQUAL) &trans
+                            &trans &trans            &trans            &trans       &trans              &trans
             >;
         };
 
@@ -704,7 +716,7 @@ started at "normal" and moving towards "faster".
         compatible = "zmk,conditional-layers";
 
         l3 {
-            if-layers = <CURSOR SYM>;
+            if-layers = <CURSOR NUM_PAD>;
             then-layer = <FCN_PAD>;
         };
     };
