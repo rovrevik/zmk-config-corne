@@ -470,12 +470,12 @@ started at "normal" and moving towards "faster".
         not clear when it is enabled
         can tell be context menus not showing up
         has triggered gui + d and accidentally deleted stuff
-        */
         combo_toggle_gui {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kt LGUI>;
             key-positions = <LGUI_KEY_POSITION LTHM_KEY_POSITION>;
         };
+        */
 
         // gui_return: prevent home row gui + ret triggering d then return
         gui_return {
