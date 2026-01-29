@@ -300,6 +300,8 @@ started at "normal" and moving towards "faster".
         };
         */
 
+        /*
+        // GUI + GRAVE to switch windows in the current application on macos
         windswitch: windswitch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -313,6 +315,7 @@ started at "normal" and moving towards "faster".
                 <&macro_release>,
                 <&kp LGUI>;
         };
+        */
     };
 
     combos {
@@ -416,50 +419,48 @@ started at "normal" and moving towards "faster".
         };
         */
 
+        /*
+        convenience combos for common shortcuts
+        these could introduce bad habits
+        never ever have combos that use the home row modifiers
+        */
+        /*
+        cut {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
+            bindings = <&kp LG(X)>;
+            key-positions = <LGUI_KEY_POSITION 26>;
+        };
         // required combo because c is under cmd on the home row
         copy {
             // the default timeout-ms works fine here
             bindings = <&kp LG(C)>;
             key-positions = <LGUI_KEY_POSITION 27>;
         };
-
-        /*
-        convenience combos for common shortcuts
-        these could introduce bad habits
-        never ever have combos that use the home row modifiers
-        */
         paste {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(V)>;
             key-positions = <LGUI_KEY_POSITION 28>;
         };
-
-        cut {
+        undo {
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            bindings = <&kp LG(X)>;
-            key-positions = <LGUI_KEY_POSITION 26>;
+            bindings = <&kp LG(Z)>;
+            key-positions = <LGUI_KEY_POSITION 24>;
         };
-
         quit {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(Q)>;
             key-positions = <LGUI_KEY_POSITION 1>;
         };
-
         close {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(W)>;
             key-positions = <LGUI_KEY_POSITION 2>;
         };
-
         refresh {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(R)>;
             key-positions = <LGUI_KEY_POSITION 4>;
         };
-
-        /*
-        never ever have combos that use the home row modifiers
         save {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(S)>;
@@ -476,12 +477,6 @@ started at "normal" and moving towards "faster".
             key-positions = <LGUI_KEY_POSITION 17>;
         };
         */
-        
-        undo {
-            timeout-ms = <COMBO_TIMEOUT_MS>;
-            bindings = <&kp LG(Z)>;
-            key-positions = <LGUI_KEY_POSITION 24>;
-        };
 
         /*
         combo_toggle_gui: toggle gui can get a little confusing.
