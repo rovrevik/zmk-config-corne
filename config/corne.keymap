@@ -266,6 +266,7 @@ started at "normal" and moving towards "faster".
         };
         */
 
+        /*
         // TODO: appswitch/tab combo not behaving as intended
         appswitch: appswitch {
             compatible = "zmk,behavior-macro";
@@ -280,7 +281,8 @@ started at "normal" and moving towards "faster".
                 <&kp TAB>,
                 <&macro_release>,
                 <&kp LGUI>;
-           };
+        };
+        */
 
         windswitch: windswitch {
             compatible = "zmk,behavior-macro";
@@ -556,10 +558,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&appswitch &kp GRAVE     &trans      &trans &trans           &trans          &trans  &trans   &trans    &trans    &trans    &trans
-&trans     &kp LC(GRAVE) &trans      &trans &hml_i LSHFT RET &trans          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans     &capsword     &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
-                                     &trans &trans           &trans          &kp DEL &trans   &trans
+&trans &kp GRAVE     &trans      &trans &trans           &trans          &trans  &trans   &trans    &trans    &trans    &trans
+&trans &kp LC(GRAVE) &trans      &trans &hml_i LSHFT RET &trans          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans &capsword     &windswitch &trans &kp SPACE        &trans          &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
+                                 &trans &trans           &trans          &kp DEL &trans   &trans
             >;
         };
 
