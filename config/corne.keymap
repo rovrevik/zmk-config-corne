@@ -6,14 +6,14 @@
 // layer indexes
 #define BASE 0
 #define CURSOR 1
-// #define NAV 2
-// #define SYM 2
 #define NUM_PAD 2
 #define SYM_PAD 3
 #define FCN_PAD 4
 #define MOUSE 5
 #define FUNCTION 6
-// #define EXTRA 4
+// #define NAV 7
+// #define SYM 8
+// #define EXTRA 9
 
 // Key positions for combos
 #define LGUI_KEY_POSITION 15
@@ -564,44 +564,6 @@ started at "normal" and moving towards "faster".
         };
 
         /*
-        NAV {
-            display-name = "Nav";
-
-            -------------------------------------------------------------------------------
-            |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
-
-            bindings = <
-&trans     &kp N1 &kp N2   &kp N3   &kp N4      &kp N5             &kp N6  &kp N7 &kp N8 &kp N9 &kp N0 &trans
-&caps_word &trans &trans   &kp UP   &browsertab &kp PG_UP          &kp N0  &kp N4 &kp N5 &kp N6 &trans &trans
-&trans     &trans &kp LEFT &kp DOWN &kp RIGHT   &kp PG_DN          &trans  &kp N1 &kp N2 &kp N3 &trans &trans
-                           &kp LGUI &trans      &kp SPACE          &kp RET &trans &trans
-            >;
-        };
-        */
-
-        /*
-        SYM {
-            display-name = "Symbols";
-
-            | Left Half:            |    | Right Half:           |
-            |   | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |   |
-            |   |   |   |   |   |   |    |   | - | = | [ | ] |   |
-            |   |   |   |   |   |   |    |   |   |   |   | \ |   |
-            |           |   |   |   |    |   |   |   |           |
-
-            bindings = <
-&trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT          &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &trans
-&trans &trans   &trans &trans   &trans   &trans             &trans    &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &trans
-&trans &trans   &trans &trans   &trans   &trans             &trans    &trans    &trans    &trans   &kp BSLH &trans
-                       &trans   &trans   &trans             &trans    &trans    &trans
-            >;
-        };
-        */
-
-        /*
         NUM_PAD: num and sym layer
         experimental layer
         settled:
@@ -666,20 +628,7 @@ started at "normal" and moving towards "faster".
             >;
         };
 
-        /*
-        EXTRA {
-            display-name = "Extra";
-            bindings = <
-&trans &trans &trans         &mmv MOVE_UP   &trans          &msc SCRL_UP            &trans &trans &trans &trans &trans &trans
-&trans &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN          &trans &trans &trans &trans &trans &trans
-&trans &trans &trans         &trans         &trans          &trans                  &trans &trans &trans &trans &trans &trans
-                             &trans         &trans          &trans                  &trans &trans &trans
-            >;
-        };
-        */
-
-// TODO: add legend
-
+        // TODO: add legend
         MOUSE {
             display-name = "Mouse";
             bindings = <
@@ -703,6 +652,56 @@ started at "normal" and moving towards "faster".
                      &trans &kp DEL &trans          &trans &trans &trans
             >;
         };
+
+        /*
+        NAV {
+            display-name = "Nav";
+
+            -------------------------------------------------------------------------------
+            |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
+
+            bindings = <
+&trans     &kp N1 &kp N2   &kp N3   &kp N4      &kp N5             &kp N6  &kp N7 &kp N8 &kp N9 &kp N0 &trans
+&caps_word &trans &trans   &kp UP   &browsertab &kp PG_UP          &kp N0  &kp N4 &kp N5 &kp N6 &trans &trans
+&trans     &trans &kp LEFT &kp DOWN &kp RIGHT   &kp PG_DN          &trans  &kp N1 &kp N2 &kp N3 &trans &trans
+                           &kp LGUI &trans      &kp SPACE          &kp RET &trans &trans
+            >;
+        };
+        */
+
+        /*
+        SYM {
+            display-name = "Symbols";
+
+            | Left Half:            |    | Right Half:           |
+            |   | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |   |
+            |   |   |   |   |   |   |    |   | - | = | [ | ] |   |
+            |   |   |   |   |   |   |    |   |   |   |   | \ |   |
+            |           |   |   |   |    |   |   |   |           |
+
+            bindings = <
+&trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT          &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &trans
+&trans &trans   &trans &trans   &trans   &trans             &trans    &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &trans
+&trans &trans   &trans &trans   &trans   &trans             &trans    &trans    &trans    &trans   &kp BSLH &trans
+                       &trans   &trans   &trans             &trans    &trans    &trans
+            >;
+        };
+        */
+
+        /*
+        EXTRA {
+            display-name = "Extra";
+            bindings = <
+&trans &trans &trans         &mmv MOVE_UP   &trans          &msc SCRL_UP            &trans &trans &trans &trans &trans &trans
+&trans &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN          &trans &trans &trans &trans &trans &trans
+&trans &trans &trans         &trans         &trans          &trans                  &trans &trans &trans &trans &trans &trans
+                             &trans         &trans          &trans                  &trans &trans &trans
+            >;
+        };
+        */
     };
 
     conditional_layers {
