@@ -9,7 +9,7 @@
 // #define NAV 2
 #define SYM 2
 #define NUM_PAD 3
-#define SYSTEM 4
+#define FCN_PAD 4
 #define MOUSE 5
 #define FUNCTION 6
 // #define EXTRA 4
@@ -642,8 +642,8 @@ started at "normal" and moving towards "faster".
             >;
         };
 
-        SYSTEM {
-            display-name = "System";
+        FCN_PAD {
+            display-name = "FcnPad";
 
             /*
             | Left Half:                    |    | Right Half:                |
@@ -705,7 +705,7 @@ started at "normal" and moving towards "faster".
 
         l3 {
             if-layers = <CURSOR SYM>;
-            then-layer = <SYSTEM>;
+            then-layer = <FCN_PAD>;
         };
     };
 };
