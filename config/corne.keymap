@@ -43,6 +43,8 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define LMEH LC(LA(LSHFT))
 #define RMEH RC(RA(RSHFT))
 
+// support left hand only operation
+// these are all the same as the default combos but with the left hand cursor layer key
 // add leading _ to prevent conflicts with ZMK
 #define _CUT LG(X)
 #define _COPY LG(C)
@@ -52,10 +54,12 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define _QUIT LG(Q)
 #define _CLOSE LG(W)
 #define _REFRESH LG(R)
+#define _ALL LG(A)
 #define _SAVE LG(S)
 #define _FIND LG(F)
 #define _FIND_AGAIN LG(G)
-#define _NEW LG(N)
+// #define COMMENT_OUT_LINE LG(FSLH)
+// #define _DELETE LG(D) this is duplicate not delete
 
 /*
 homerow timings
@@ -569,20 +573,28 @@ started at "normal" and moving towards "faster".
             display-name = "Cursor";
 
             /*
-            | Left Half:                                             |   | Right Half:                          |
-            |          | QUIT | CLOSE | SPACE | REFRESH | RET        |   |     |      |       |       |       |   |
-            | capsword |      | SAVE  |       | FIND    | FIND_AGAIN |   |     | LEFT | DOWN  | UP    | RIGHT |   |
-            |          | UNDO | CUT   | COPY  | PASTE   |            |   | NEW | HOME | PG_DN | PG_UP | END   |   |
-            |                         |       |         |            |   |     | DEL  |       |                   |
+            | Left Half:                                                 |   | Right Half:                          |
+            |          | _QUIT | _CLOSE | SPACE | _REFRESH | RET         |   |   |      |       |       |       |   |
+            | capsword | _ALL  | _SAVE  |       | _FIND    | _FIND_AGAIN |   |   | LEFT | DOWN  | UP    | RIGHT |   |
+            |          | _UNDO | _CUT   | _COPY | _PASTE   |             |   |   | HOME | PG_DN | PG_UP | END   |   |
+            |                           |       |          |             |   |   | DEL  |       |                   |
             */
 
             // SPACE and RET are intentionally not on home row mod keys so there is repeat triggering
+            // following the pattern of only configuring system shortcuts
+            // thumb key + key is similar to GUI + key
+            // application shortcuts are being supported with macros
+            // the T / RET shortcut conflicts with GUI + T to create an new tab in the browser
+
+            //todo:
+            // support home row mod on &capsword &hml_p LCTRL &capsword
+            // add COMMENT_OUT_LINE
 
             bindings = <
-&trans    &kp _QUIT           &kp _CLOSE        &kp SPACE &kp _REFRESH       &kp RET                  &trans   &trans   &trans    &trans    &trans    &trans
-&capsword &trans              &hml_r LALT _SAVE &trans    &hml_i LSHFT _FIND &kp _FIND_AGAIN          &trans   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans    &hml_p LHYPER _UNDO &hml_r LMEH _CUT  &kp _COPY &kp _PASTE         &trans                   &kp _NEW &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
-                                                &trans    &trans             &trans                   &kp DEL  &trans   &trans
+&trans    &kp _QUIT           &kp _CLOSE        &kp SPACE &kp _REFRESH       &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
+&capsword &hml_p LCTRL _ALL   &hml_r LALT _SAVE &trans    &hml_i LSHFT _FIND &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans    &hml_p LHYPER _UNDO &hml_r LMEH _CUT  &kp _COPY &kp _PASTE         &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
+                                                &trans    &trans             &trans                   &kp DEL &trans   &trans
             >;
         };
 
