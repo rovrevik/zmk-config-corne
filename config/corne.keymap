@@ -4,10 +4,11 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // layer indexes
-#define BASE_CAGS 0
-#define CURSOR_CAGS 1
-#define NUM_PAD_CAGS 2
-#define SYM_PAD_CAGS 3
+// _C suffix stands for CAGS
+#define BASE_C 0
+#define CURSOR_C 1
+#define NUM_PAD_C 2
+#define SYM_PAD_C 3
 #define FCN_PAD 4
 #define MOUSE 5
 #define FUNCTION 6
@@ -545,7 +546,7 @@ started at "normal" and moving towards "faster".
     keymap {
         compatible = "zmk,keymap";
 
-        BASE_CAGS {
+        BASE_C {
             display-name = "macOS";
 
             /*
@@ -592,14 +593,14 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&kp GRAVE          &kp Q       &kp W       &kp E           &kp R                  &kp T                           &kp Y &kp U       &kp I                    &kp O         &kp P          &kp BSLH
-LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)            &kp G                           &kp H RHRM_I_C(J) RHRM_M_C(K)              RHRM_R_C(L)   RHRM_P_C(SEMI) &kp SQT
-&lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V                  &kp B                           &kp N &kp M       &kp COMMA                RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
-                                           THM(MOUSE, ESC) THM(CURSOR_CAGS, BSPC) THM(NUM_PAD_CAGS, TAB)          &kp RET           THM(SYM_PAD_CAGS, SPACE) &mo MOUSE
+&kp GRAVE          &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &kp BSLH
+LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &kp G                        &kp H RHRM_I_C(J) RHRM_M_C(K)           RHRM_R_C(L)   RHRM_P_C(SEMI) &kp SQT
+&lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N &kp M       &kp COMMA             RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
+                                           THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET           THM(SYM_PAD_C, SPACE) &mo MOUSE
             >;
         };
 
-        CURSOR_CAGS {
+        CURSOR_C {
             display-name = "Cursor";
 
             /*
@@ -638,7 +639,7 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)          
         - middle row: ' (shift): "
         - bottom row: ,./ (shift): <>?
         */
-        NUM_PAD_CAGS {
+        NUM_PAD_C {
             display-name = "NumPad";
 
             /*
@@ -663,7 +664,7 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)          
             >;
         };
 
-        SYM_PAD_CAGS {
+        SYM_PAD_C {
             display-name = "SymPad";
 
             bindings = <
@@ -773,7 +774,7 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)          
         compatible = "zmk,conditional-layers";
 
         fcn_cags {
-            if-layers = <CURSOR_CAGS SYM_PAD_CAGS>;
+            if-layers = <CURSOR_C SYM_PAD_C>;
             then-layer = <FCN_PAD>;
         };
     };
