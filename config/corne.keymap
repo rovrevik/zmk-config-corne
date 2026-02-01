@@ -38,11 +38,6 @@ zmk/app/dts/bindings/zmk,combos.yaml
 */
 #define COMBO_TIMEOUT_MS 140
 
-#define LHYPER LC(LA(LG(LSHFT)))
-#define RHYPER RC(RA(RG(RSHFT)))
-#define LMEH LC(LA(LSHFT))
-#define RMEH RC(RA(RSHFT))
-
 // support left hand only operation
 // these are all the same as the default combos but with the left hand cursor layer key
 // add leading _ to prevent conflicts with ZMK
@@ -60,6 +55,31 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define _FIND_AGAIN LG(G)
 // #define COMMENT_OUT_LINE LG(FSLH)
 // #define _DELETE LG(D) this is duplicate not delete
+
+#define LHYPER LC(LA(LG(LSHFT)))
+#define LMEH LC(LA(LSHFT))
+#define RHYPER RC(RA(RG(RSHFT)))
+#define RMEH RC(RA(RSHFT))
+
+// CAGS home rom mods (macOS)
+#define LHRM_P_C(tap) &hml_p LCTRL tap
+#define LHRM_R_C(tap) &hml_r LALT tap
+#define LHRM_M_C(tap) &hml_m LGUI tap
+#define LHRM_I_C(tap) &hml_i LSHFT tap
+#define RHRM_I_C(tap) &hmr_i RSHFT tap
+#define RHRM_M_C(tap) &hmr_m RGUI tap
+#define RHRM_R_C(tap) &hmr_r RALT tap
+#define RHRM_P_C(tap) &hmr_p RCTRL tap
+
+// GASC home row mods (Linux/Windows)
+#define LHRM_P_G(tap) &hml_p LGUI tap
+#define LHRM_R_G(tap) &hml_r LALT tap
+#define LHRM_M_G(tap) &hml_m LSHFT tap
+#define LHRM_I_G(tap) &hml_i LCTRL tap
+#define RHRM_I_G(tap) &hmr_i RCTRL tap
+#define RHRM_M_G(tap) &hmr_m RSHFT tap
+#define RHRM_R_G(tap) &hmr_r RALT tap
+#define RHRM_P_G(tap) &hmr_p RGUI tap
 
 /*
 homerow timings
