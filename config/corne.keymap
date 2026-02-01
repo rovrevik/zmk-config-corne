@@ -675,7 +675,7 @@ started at "normal" and moving towards "faster".
         };
 
         /*
-        function layer to emulate the lower outer left globe/fn key on mac
+        function layer to emulate the lower outer left globe/fn key on macOS keyboards
         DEL overrides BACKSPACE
         */
         FUNCTION {
