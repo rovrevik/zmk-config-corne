@@ -88,6 +88,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define RHRM_MEH(tap)   &hmr_r RMEH tap
 #define RHRM_HYPER(tap) &hmr_p RHYPER tap
 
+// Thumb row layer-tap
+#define THM(layer, tap) &thumb_ht layer tap
+
 /*
 homerow timings
 For advanced tuning of HRM values, see: ZMK HRM Best Practice Values [SUNAKU]
@@ -589,10 +592,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&kp GRAVE          &kp Q         &kp W       &kp E               &kp R                      &kp T                               &kp Y &kp U       &kp I                        &kp O         &kp P            &kp BSLH
-LHRM_HYPER(ESC)    LHRM_P_C(A)   LHRM_R_C(S) LHRM_M_C(D)         LHRM_I_C(F)                &kp G                               &kp H RHRM_I_C(J) RHRM_M_C(K)                  RHRM_R_C(L)   RHRM_P_C(SEMI)   &kp SQT
-&lt FUNCTION GLOBE LHRM_HYPER(Z) LHRM_MEH(X) &kp C               &kp V                      &kp B                               &kp N &kp M       &kp COMMA                    RHRM_MEH(DOT) RHRM_HYPER(FSLH) &none
-                                             &thumb_ht MOUSE ESC &thumb_ht CURSOR_CAGS BSPC &thumb_ht NUM_PAD_CAGS TAB          &kp RET           &thumb_ht SYM_PAD_CAGS SPACE &mo MOUSE
+&kp GRAVE          &kp Q         &kp W       &kp E           &kp R                  &kp T                           &kp Y &kp U       &kp I                    &kp O         &kp P            &kp BSLH
+LHRM_HYPER(ESC)    LHRM_P_C(A)   LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)            &kp G                           &kp H RHRM_I_C(J) RHRM_M_C(K)              RHRM_R_C(L)   RHRM_P_C(SEMI)   &kp SQT
+&lt FUNCTION GLOBE LHRM_HYPER(Z) LHRM_MEH(X) &kp C           &kp V                  &kp B                           &kp N &kp M       &kp COMMA                RHRM_MEH(DOT) RHRM_HYPER(FSLH) &none
+                                             THM(MOUSE, ESC) THM(CURSOR_CAGS, BSPC) THM(NUM_PAD_CAGS, TAB)          &kp RET           THM(SYM_PAD_CAGS, SPACE) &mo MOUSE
             >;
         };
 
