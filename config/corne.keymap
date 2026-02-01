@@ -83,10 +83,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define RHRM_P_G(tap) &hmr_p RGUI tap
 
 // Hyper and Meh home row mods (OS-independent)
-#define LHRM_HYPER(tap) &hml_p LHYPER tap
-#define LHRM_MEH(tap)   &hml_r LMEH tap
-#define RHRM_MEH(tap)   &hmr_r RMEH tap
-#define RHRM_HYPER(tap) &hmr_p RHYPER tap
+#define LHRM_HYP(tap) &hml_p LHYPER tap
+#define LHRM_MEH(tap) &hml_r LMEH tap
+#define RHRM_MEH(tap) &hmr_r RMEH tap
+#define RHRM_HYP(tap) &hmr_p RHYPER tap
 
 // Thumb row layer-tap
 #define THM(layer, tap) &thumb_ht layer tap
@@ -592,10 +592,10 @@ started at "normal" and moving towards "faster".
             */
 
             bindings = <
-&kp GRAVE          &kp Q         &kp W       &kp E           &kp R                  &kp T                           &kp Y &kp U       &kp I                    &kp O         &kp P            &kp BSLH
-LHRM_HYPER(ESC)    LHRM_P_C(A)   LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)            &kp G                           &kp H RHRM_I_C(J) RHRM_M_C(K)              RHRM_R_C(L)   RHRM_P_C(SEMI)   &kp SQT
-&lt FUNCTION GLOBE LHRM_HYPER(Z) LHRM_MEH(X) &kp C           &kp V                  &kp B                           &kp N &kp M       &kp COMMA                RHRM_MEH(DOT) RHRM_HYPER(FSLH) &none
-                                             THM(MOUSE, ESC) THM(CURSOR_CAGS, BSPC) THM(NUM_PAD_CAGS, TAB)          &kp RET           THM(SYM_PAD_CAGS, SPACE) &mo MOUSE
+&kp GRAVE          &kp Q       &kp W       &kp E           &kp R                  &kp T                           &kp Y &kp U       &kp I                    &kp O         &kp P          &kp BSLH
+LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)            &kp G                           &kp H RHRM_I_C(J) RHRM_M_C(K)              RHRM_R_C(L)   RHRM_P_C(SEMI) &kp SQT
+&lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V                  &kp B                           &kp N &kp M       &kp COMMA                RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
+                                           THM(MOUSE, ESC) THM(CURSOR_CAGS, BSPC) THM(NUM_PAD_CAGS, TAB)          &kp RET           THM(SYM_PAD_CAGS, SPACE) &mo MOUSE
             >;
         };
 
@@ -621,10 +621,10 @@ LHRM_HYPER(ESC)    LHRM_P_C(A)   LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)        
             // add COMMENT_OUT_LINE
 
             bindings = <
-&trans    &kp _QUIT         &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
-&capsword LHRM_P_C(_ALL)    LHRM_R_C(_SAVE) &trans    LHRM_I_C(_FIND) &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans    LHRM_HYPER(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
-                                            &trans    &trans          &trans                   &kp DEL &trans   &trans
+&trans    &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
+&capsword LHRM_P_C(_ALL)  LHRM_R_C(_SAVE) &trans    LHRM_I_C(_FIND) &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans    LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
+                                          &trans    &trans          &trans                   &kp DEL &trans   &trans
             >;
         };
 
@@ -656,9 +656,9 @@ LHRM_HYPER(ESC)    LHRM_P_C(A)   LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)        
             */
 
             bindings = <
-&trans &kp GRAVE     &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH     &kp N7            &kp N8           &kp N9           &trans                &trans
-&trans &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT      RHRM_I_C(N4)      RHRM_M_C(N5)     RHRM_R_C(N6)     RHRM_P_C(MINUS)       &trans
-&trans &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp N1            &kp N2           RHRM_MEH(N3)     RHRM_HYPER(EQUAL)     &trans
+&trans &kp GRAVE     &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH     &kp N7            &kp N8           &kp N9           &trans              &trans
+&trans &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT      RHRM_I_C(N4)      RHRM_M_C(N5)     RHRM_R_C(N6)     RHRM_P_C(MINUS)     &trans
+&trans &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp N1            &kp N2           RHRM_MEH(N3)     RHRM_HYP(EQUAL)     &trans
                             &trans         &trans         &trans          &trans       &trans            &kp N0
             >;
         };
@@ -667,9 +667,9 @@ LHRM_HYPER(ESC)    LHRM_P_C(A)   LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)        
             display-name = "SymPad";
 
             bindings = <
-&trans &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans           &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &trans           &trans                &trans
-&trans &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans           &kp SQT      RHRM_I_C(LS(N4)) RHRM_M_C(LS(N5)) RHRM_R_C(LS(N6)) RHRM_P_C(LS(MINUS))   &trans
-&trans &trans        &trans &kp LBRC       &kp RBRC       &trans           &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYPER(LS(EQUAL)) &trans
+&trans &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans           &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &trans           &trans              &trans
+&trans &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans           &kp SQT      RHRM_I_C(LS(N4)) RHRM_M_C(LS(N5)) RHRM_R_C(LS(N6)) RHRM_P_C(LS(MINUS)) &trans
+&trans &trans        &trans &kp LBRC       &kp RBRC       &trans           &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYP(LS(EQUAL)) &trans
                             &trans         &trans         &trans           &trans       &trans           &trans
             >;
         };
