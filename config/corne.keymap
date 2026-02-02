@@ -734,15 +734,15 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
             display-name = "FcnPad";
 
             /*
-            | Left Half:                    |    | Right Half:                |
-            |   |     |     |     |    |    |    |   | F7 | F8 | F9 | F10 |   |
-            |   |     |     |     |    |    |    |   | F4 | F5 | F6 | F12 |   |
-            |   | BT0 | BT1 | BT2 | C  | CA |    |   | F1 | F2 | F3 | F11 |   |
-            |               |     |    |    |    |   |    |    |              |
+            | Left Half:                        |    | Right Half:                |
+            |   | CAGS | GASC |     | C   | CA  |    |   | F7 | F8 | F9 | F10 |   |
+            |   |      |      |     | BL  | SU  |    |   | F4 | F5 | F6 | F12 |   |
+            |   | BT0  | BT1  | BT2 | BT3 | BT4 |    |   | F1 | F2 | F3 | F11 |   |
+            |                 |     |     |     |    |   |    |    |              |
             */
 
             bindings = <
-&trans &trans       &trans       &trans       &trans     &trans                  &trans &kp F7 &kp F8 &kp F9 &kp F10 &trans
+&trans &to BASE_C   &to BASE_G   &trans       &trans     &trans                  &trans &kp F7 &kp F8 &kp F9 &kp F10 &trans
 &trans &trans       &trans       &trans       &trans     &studio_unlock          &trans &kp F4 &kp F5 &kp F6 &kp F12 &trans
 &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &bt BT_CLR_ALL          &trans &kp F1 &kp F2 &kp F3 &kp F11 &bootloader
                                  &trans       &trans     &trans                  &trans &trans &trans
