@@ -690,10 +690,10 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
             */
 
             bindings = <
-&trans &kp GRAVE     &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH     &kp N7            &kp N8           &kp N9           &trans              &trans
-&trans &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT      RHRM_I_C(N4)      RHRM_M_C(N5)     RHRM_R_C(N6)     RHRM_P_C(MINUS)     &trans
-&trans &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp N1            &kp N2           RHRM_MEH(N3)     RHRM_HYP(EQUAL)     &trans
-                            &trans         &trans         &trans          &trans       &trans            &kp N0
+&none &kp GRAVE     &none  &kp LPAR       &kp RPAR       &none           &kp BSLH     &kp N7            &kp N8           &kp N9           &none               &none
+&none &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT      RHRM_I_C(N4)      RHRM_M_C(N5)     RHRM_R_C(N6)     RHRM_P_C(MINUS)     &none
+&none &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp N1            &kp N2           RHRM_MEH(N3)     RHRM_HYP(EQUAL)     &none
+                           &trans         &trans         &trans          &trans       &trans            &kp N0
             >;
         };
 
@@ -701,10 +701,10 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
             display-name = "NumPad";
 
             bindings = <
-&trans &kp GRAVE     &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH     &kp N7            &kp N8           &kp N9           &trans              &trans
-&trans &trans        &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT      RHRM_I_G(N4)      RHRM_M_G(N5)     RHRM_R_G(N6)     RHRM_P_G(MINUS)     &trans
-&trans &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp N1            &kp N2           RHRM_MEH(N3)     RHRM_HYP(EQUAL)     &trans
-                            &trans         &trans         &trans          &trans       &trans            &kp N0
+&none &kp GRAVE     &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH     &kp N7            &kp N8           &kp N9           &none               &none
+&none &trans        &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT      RHRM_I_G(N4)      RHRM_M_G(N5)     RHRM_R_G(N6)     RHRM_P_G(MINUS)     &none
+&none &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp N1            &kp N2           RHRM_MEH(N3)     RHRM_HYP(EQUAL)     &none
+                           &trans         &trans         &trans          &trans       &trans            &kp N0
             >;
         };
 
@@ -712,10 +712,10 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
             display-name = "SymPad";
 
             bindings = <
-&trans &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans           &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &trans           &trans              &trans
-&trans &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans           &kp SQT      RHRM_I_C(LS(N4)) RHRM_M_C(LS(N5)) RHRM_R_C(LS(N6)) RHRM_P_C(LS(MINUS)) &trans
-&trans &trans        &trans &kp LBRC       &kp RBRC       &trans           &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYP(LS(EQUAL)) &trans
-                            &trans         &trans         &trans           &trans       &trans           &trans
+&none &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans          &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &none            &none               &none
+&none &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT      RHRM_I_C(LS(N4)) RHRM_M_C(LS(N5)) RHRM_R_C(LS(N6)) RHRM_P_C(LS(MINUS)) &none
+&none &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYP(LS(EQUAL)) &none
+                           &trans         &trans         &trans          &trans       &trans           &trans
             >;
         };
 
@@ -723,10 +723,10 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
             display-name = "SymPad";
 
             bindings = <
-&trans &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans           &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &trans           &trans              &trans
-&trans &trans        &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans           &kp SQT      RHRM_I_G(LS(N4)) RHRM_M_G(LS(N5)) RHRM_R_G(LS(N6)) RHRM_P_G(LS(MINUS)) &trans
-&trans &trans        &trans &kp LBRC       &kp RBRC       &trans           &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYP(LS(EQUAL)) &trans
-                            &trans         &trans         &trans           &trans       &trans           &trans
+&none &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans          &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &none            &none               &none
+&none &trans        &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT      RHRM_I_G(LS(N4)) RHRM_M_G(LS(N5)) RHRM_R_G(LS(N6)) RHRM_P_G(LS(MINUS)) &none
+&none &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYP(LS(EQUAL)) &none
+                           &trans         &trans         &trans          &trans       &trans           &trans
             >;
         };
 
@@ -742,9 +742,9 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
             */
 
             bindings = <
-&none &to BASE_C   &to BASE_G     &none        &bt BT_CLR   &bt BT_CLR_ALL          &none &kp F7 &kp F8 &kp F9 &kp F10 &none
-&none &none        &none          &none        &bootloader  &studio_unlock          &none &kp F4 &kp F5 &kp F6 &kp F12 &none
-&none &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &none &kp F1 &kp F2 &kp F3 &kp F11 &none
+&none &to BASE_C   &to BASE_G     &none        &bt BT_CLR   &bt BT_CLR_ALL          &none  &kp F7 &kp F8 &kp F9 &kp F10 &none
+&none &none        &none          &none        &bootloader  &studio_unlock          &none  &kp F4 &kp F5 &kp F6 &kp F12 &none
+&none &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &none  &kp F1 &kp F2 &kp F3 &kp F11 &none
                                   &trans       &trans       &trans                  &trans &trans &trans
             >;
         };
