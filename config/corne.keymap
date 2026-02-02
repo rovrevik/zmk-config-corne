@@ -4,14 +4,24 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // layer indexes
+// need almost duplicate layers that override taps on the home row keys
+
 // _C suffix stands for CAGS
 #define BASE_C 0
-#define CURSOR_C 1
-#define NUM_PAD_C 2
-#define SYM_PAD_C 3
-#define FCN_PAD 4
-#define MOUSE 5
-#define FUNCTION 6
+#define CURSOR_C 2
+#define NUM_PAD_C 4
+#define SYM_PAD_C 6
+
+// _G suffix stands for GASC
+#define BASE_G 1
+#define CURSOR_G 3
+#define NUM_PAD_G 5
+#define SYM_PAD_G 7
+
+// layers that do not override taps on the home row keys
+#define FCN_PAD 8
+#define MOUSE 9
+#define FUNCTION 10
 
 // #define NAV 7
 // #define SYM 8
@@ -598,6 +608,18 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &
 &lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N &kp M       &kp COMMA             RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
                                            THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET           THM(SYM_PAD_C, SPACE) &mo MOUSE
             >;
+
+        };
+
+        BASE_G {
+            display-name = "Base";
+
+            bindings = <
+&kp GRAVE          &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &kp BSLH
+LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &kp G                        &kp H RHRM_I_G(J) RHRM_M_G(K)           RHRM_R_G(L)   RHRM_P_G(SEMI) &kp SQT
+&lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N &kp M       &kp COMMA             RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
+                                           THM(MOUSE, ESC) THM(CURSOR_G, BSPC) THM(NUM_PAD_G, TAB)          &kp RET           THM(SYM_PAD_G, SPACE) &mo MOUSE
+            >;
         };
 
         CURSOR_C {
@@ -624,6 +646,17 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &
             bindings = <
 &trans    &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
 &capsword LHRM_P_C(_ALL)  LHRM_R_C(_SAVE) &trans    LHRM_I_C(_FIND) &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans    LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
+                                          &trans    &trans          &trans                   &kp DEL &trans   &trans
+            >;
+        };
+
+        CURSOR_G {
+            display-name = "Cursor";
+
+            bindings = <
+&trans    &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
+&capsword LHRM_P_G(_ALL)  LHRM_R_G(_SAVE) &trans    LHRM_I_G(_FIND) &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
 &trans    LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
                                           &trans    &trans          &trans                   &kp DEL &trans   &trans
             >;
@@ -664,12 +697,34 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &
             >;
         };
 
+        NUM_PAD_G {
+            display-name = "NumPad";
+
+            bindings = <
+&trans &kp GRAVE     &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH     &kp N7            &kp N8           &kp N9           &trans              &trans
+&trans &trans        &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT      RHRM_I_G(N4)      RHRM_M_G(N5)     RHRM_R_G(N6)     RHRM_P_G(MINUS)     &trans
+&trans &trans        &trans &kp LBRC       &kp RBRC       &trans          &kp DQT      &kp N1            &kp N2           RHRM_MEH(N3)     RHRM_HYP(EQUAL)     &trans
+                            &trans         &trans         &trans          &trans       &trans            &kp N0
+            >;
+        };
+
         SYM_PAD_C {
             display-name = "SymPad";
 
             bindings = <
 &trans &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans           &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &trans           &trans              &trans
 &trans &trans        &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans           &kp SQT      RHRM_I_C(LS(N4)) RHRM_M_C(LS(N5)) RHRM_R_C(LS(N6)) RHRM_P_C(LS(MINUS)) &trans
+&trans &trans        &trans &kp LBRC       &kp RBRC       &trans           &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYP(LS(EQUAL)) &trans
+                            &trans         &trans         &trans           &trans       &trans           &trans
+            >;
+        };
+
+        SYM_PAD_G {
+            display-name = "SymPad";
+
+            bindings = <
+&trans &kp LS(GRAVE) &trans &kp LPAR       &kp RPAR       &trans           &kp LS(BSLH) &kp LS(N7)       &kp LS(N8)       &trans           &trans              &trans
+&trans &trans        &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans           &kp SQT      RHRM_I_G(LS(N4)) RHRM_M_G(LS(N5)) RHRM_R_G(LS(N6)) RHRM_P_G(LS(MINUS)) &trans
 &trans &trans        &trans &kp LBRC       &kp RBRC       &trans           &kp DQT      &kp LS(N1)       &kp LS(N2)       RHRM_MEH(LS(N3)) RHRM_HYP(LS(EQUAL)) &trans
                             &trans         &trans         &trans           &trans       &trans           &trans
             >;
@@ -775,6 +830,11 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &
 
         fcn_cags {
             if-layers = <CURSOR_C SYM_PAD_C>;
+            then-layer = <FCN_PAD>;
+        };
+
+        fcn_gasc {
+            if-layers = <CURSOR_G SYM_PAD_G>;
             then-layer = <FCN_PAD>;
         };
     };
