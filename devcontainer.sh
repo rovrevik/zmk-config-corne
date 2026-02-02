@@ -40,6 +40,7 @@ build() {
         devcontainer up --workspace-folder "$WORKSPACE_FOLDER"
         echo "Devcontainer daemon started"
     fi
+    devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/draw.sh
     devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/build.sh
 }
 
@@ -51,14 +52,22 @@ case "${1:-build}" in
     connect)
         connect_container
         ;;
+    draw)
+        if ! is_container_running; then
+            devcontainer up --workspace-folder "$WORKSPACE_FOLDER"
+            echo "Devcontainer daemon started"
+        fi
+        devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/draw.sh
+        ;;
     build)
         build
         ;;
     *)
-        echo "Usage: $0 {stop|connect|build}"
+        echo "Usage: $0 {stop|connect|build|draw}"
         echo "  stop    - Stop the devcontainer"
         echo "  connect - Connect interactively to the devcontainer"
         echo "  build   - Start the devcontainer and run build.sh (default)"
+        echo "  draw    - Generate keymap SVG using keymap-drawer"
         exit 1
         ;;
 esac
