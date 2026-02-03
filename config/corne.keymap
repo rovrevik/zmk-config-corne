@@ -73,36 +73,36 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define RMEH RC(RA(RSHFT))
 
 // CAGS home rom mods (macOS)
-#define LHRM_P_C(tap) &hml_p LCTRL tap
-#define LHRM_R_C(tap) &hml_r LALT tap
-#define LHRM_M_C(tap) &hml_m LGUI tap
-#define LHRM_I_C(tap) &hml_i LSHFT tap
-#define RHRM_I_C(tap) &hmr_i RSHFT tap
-#define RHRM_M_C(tap) &hmr_m RGUI tap
-#define RHRM_R_C(tap) &hmr_r RALT tap
-#define RHRM_P_C(tap) &hmr_p RCTRL tap
+#define LHRM_P_C(tap) &hrm_l_p LCTRL tap
+#define LHRM_R_C(tap) &hrm_l_r LALT tap
+#define LHRM_M_C(tap) &hrm_l_m LGUI tap
+#define LHRM_I_C(tap) &hrm_l_i LSHFT tap
+#define RHRM_I_C(tap) &hrm_r_i RSHFT tap
+#define RHRM_M_C(tap) &hrm_r_m RGUI tap
+#define RHRM_R_C(tap) &hrm_r_r RALT tap
+#define RHRM_P_C(tap) &hrm_r_p RCTRL tap
 
 // GASC home row mods (Linux/Windows)
-#define LHRM_P_G(tap) &hml_p LGUI tap
-#define LHRM_R_G(tap) &hml_r LALT tap
-#define LHRM_M_G(tap) &hml_m LSHFT tap
-#define LHRM_I_G(tap) &hml_i LCTRL tap
-#define RHRM_I_G(tap) &hmr_i RCTRL tap
-#define RHRM_M_G(tap) &hmr_m RSHFT tap
-#define RHRM_R_G(tap) &hmr_r RALT tap
-#define RHRM_P_G(tap) &hmr_p RGUI tap
+#define LHRM_P_G(tap) &hrm_l_p LGUI tap
+#define LHRM_R_G(tap) &hrm_l_r LALT tap
+#define LHRM_M_G(tap) &hrm_l_m LSHFT tap
+#define LHRM_I_G(tap) &hrm_l_i LCTRL tap
+#define RHRM_I_G(tap) &hrm_r_i RCTRL tap
+#define RHRM_M_G(tap) &hrm_r_m RSHFT tap
+#define RHRM_R_G(tap) &hrm_r_r RALT tap
+#define RHRM_P_G(tap) &hrm_r_p RGUI tap
 
 // Hyper and Meh home row mods (OS-independent)
-#define LHRM_HYP(tap) &hml_p LHYPER tap
-#define LHRM_MEH(tap) &hml_r LMEH tap
-#define RHRM_MEH(tap) &hmr_r RMEH tap
-#define RHRM_HYP(tap) &hmr_p RHYPER tap
+#define LHRM_HYP(tap) &hrm_l_p LHYPER tap
+#define LHRM_MEH(tap) &hrm_l_r LMEH tap
+#define RHRM_MEH(tap) &hrm_r_r RMEH tap
+#define RHRM_HYP(tap) &hrm_r_p RHYPER tap
 
 // Thumb row layer-tap
 #define THM(layer, tap) &thumb_ht layer tap
 
 /*
-homerow timings
+home row timings
 For advanced tuning of HRM values, see: ZMK HRM Best Practice Values [SUNAKU]
 https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
 started at "normal" and moving towards "faster".
@@ -131,9 +131,9 @@ started at "normal" and moving towards "faster".
     behaviors {
         /*
         unused in favor of the more advanced hold-tap behaviors below
-        hm: homerow_mods {
+        hm: home_row_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOME_ROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
@@ -145,13 +145,13 @@ started at "normal" and moving towards "faster".
         */
 
         /*
-        Homerow Mods inspired by TailorKey.
-        These behaviors are not really homerow mods in the strict sense, but they are designed to be used on the home row keys.
+        Home row mods inspired by TailorKey.
+        These behaviors are not really home row mods in the strict sense, but they are designed to be used on the home row keys.
         They can be used on any key, but they have optimized timings for the fingers used for the home row keys.
-        Using hyper and meh in addition to the four standard homerow mod keys from urob.
+        Using hyper and meh in addition to the four standard home row mod keys from urob.
         */
-        // Homerow Mod for the left index finger (main/outer/f)
-        hml_i: homerow_left_index {
+        // Home row mod for the left index finger (main/outer/f)
+        hrm_l_i: home_row_left_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_I_TAPPING_TERM_MS>;
@@ -163,8 +163,8 @@ started at "normal" and moving towards "faster".
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the left middle finger
-        hml_m: homerow_left_middle {
+        // Home row mod for the left middle finger
+        hrm_l_m: home_row_left_middle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_M_TAPPING_TERM_MS>;
@@ -176,8 +176,8 @@ started at "normal" and moving towards "faster".
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the left ring finger 1
-        hml_r: homerow_left_ring {
+        // Home row mod for the left ring finger 1
+        hrm_l_r: home_row_left_ring {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_R_TAPPING_TERM_MS>;
@@ -189,8 +189,8 @@ started at "normal" and moving towards "faster".
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the left pinky (main/inner/a)
-        hml_p: homerow_left_pinky {
+        // Home row mod for the left pinky (main/inner/a)
+        hrm_l_p: home_row_left_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_P_TAPPING_TERM_MS>;
@@ -202,8 +202,8 @@ started at "normal" and moving towards "faster".
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right index finger (main/outer/j)
-        hmr_i: homerow_right_index {
+        // Home row mod for the right index finger (main/outer/j)
+        hrm_r_i: home_row_right_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_I_TAPPING_TERM_MS>;
@@ -215,8 +215,8 @@ started at "normal" and moving towards "faster".
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right middle finger
-        hmr_m: homerow_right_middle {
+        // Home row mod for the right middle finger
+        hrm_r_m: home_row_right_middle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_M_TAPPING_TERM_MS>;
@@ -228,8 +228,8 @@ started at "normal" and moving towards "faster".
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right ring 1
-        hmr_r: homerow_right_ring {
+        // Home row mod for the right ring 1
+        hrm_r_r: home_row_right_ring {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_R_TAPPING_TERM_MS>;
@@ -241,8 +241,8 @@ started at "normal" and moving towards "faster".
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right pinky (main/inner/;)
-        hmr_p: homerow_right_pinky {
+        // Home row mod for the right pinky (main/inner/;)
+        hrm_r_p: home_row_right_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <HRM_P_TAPPING_TERM_MS>;
@@ -586,7 +586,7 @@ started at "normal" and moving towards "faster".
             hyper and meh considerations:
             - hyper commonly is mapped to hold caps so it should be triggered with pinky
             - z and x are good candidates for hyper and meh because the letters are less frequently used
-            GUI on left homerow + TAB on left inner thumb is comfortable for single hand use
+            GUI on left home row + TAB on left inner thumb is comfortable for single hand use
             minimize use of outer pinky columns to reduce uncomfortable stretches
 
             repeated to reduce standard keyboard friction:
@@ -647,7 +647,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
             // the T / RET shortcut conflicts with GUI + T to create an new tab in the browser
 
             //todo:
-            // support home row mod on &capsword &hml_p LCTRL &capsword
+            // support home row mod on &capsword &hrm_l_p LCTRL &capsword
             // add COMMENT_OUT_LINE
 
             bindings = <
