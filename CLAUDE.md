@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ZMK firmware configuration for the Corne Wireless split ergonomic keyboard (42 keys, nice_nano_v2 board, nice_view display). Built for Keyboard Hoarders' CorneWireless product.
+ZMK firmware configuration for the Corne Wireless split ergonomic keyboard (42 keys, nice_nano_v2 board, nice_view display). Built for the CorneWireless product.
 
 ## Build Commands
 
