@@ -565,7 +565,7 @@ started at "normal" and moving towards "faster".
         compatible = "zmk,keymap";
 
         BASE_C {
-            display-name = "macOS";
+            display-name = "BaseCgs";
 
             /*
             | Left Half:            |    | Right Half:           |
@@ -620,7 +620,7 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &
         };
 
         BASE_G {
-            display-name = "Base";
+            display-name = "BaseGsc";
 
             bindings = <
 &kp GRAVE          &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &kp BSLH
@@ -631,7 +631,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
         };
 
         CURSOR_C {
-            display-name = "Cursor";
+            display-name = "CsrCgs";
 
             /*
             | Left Half:                                                 |   | Right Half:                          |
@@ -660,7 +660,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
         };
 
         CURSOR_G {
-            display-name = "Cursor";
+            display-name = "CsrGsc";
 
             bindings = <
 &trans    &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
@@ -681,7 +681,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
         - bottom row: ,./ (shift): <>?
         */
         NUM_PAD_C {
-            display-name = "NumPad";
+            display-name = "NmPdCgs";
 
             /*
             | Left Half:            |     | Right Half:           |
@@ -706,7 +706,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
         };
 
         NUM_PAD_G {
-            display-name = "NumPad";
+            display-name = "NmPdGsc";
 
             bindings = <
 &none &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &none
@@ -717,7 +717,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
         };
 
         SYM_PAD_C {
-            display-name = "SymPad";
+            display-name = "SyPdCgs";
 
             bindings = <
 &none &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &none
@@ -728,7 +728,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
         };
 
         SYM_PAD_G {
-            display-name = "SymPad";
+            display-name = "SyPdGsc";
 
             bindings = <
 &none &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &none
@@ -739,7 +739,7 @@ LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &
         };
 
         FCN_PAD {
-            display-name = "FcnPad";
+            display-name = "FnPd";
 
             /*
             | Left Half:                        |    | Right Half:                |
