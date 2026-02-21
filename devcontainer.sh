@@ -1,6 +1,30 @@
 #!/bin/bash
 
 WORKSPACE_FOLDER="$(cd ../zmk && pwd)"
+ZMK_CONFIG_DIR="${ZMK_CONFIG_DIR:-$(cd "$(dirname "$0")" && pwd)}"
+
+# Ensure zmk-config volume exists as bind mount to ZMK_CONFIG_DIR
+ensure_zmk_config_volume() {
+    local volume_ok=false
+    if docker volume inspect zmk-config >/dev/null 2>&1; then
+        local device
+        device=$(docker volume inspect zmk-config --format '{{ index .Options "device" }}' 2>/dev/null)
+        if [ "$device" = "$ZMK_CONFIG_DIR" ]; then
+            volume_ok=true
+        fi
+    fi
+
+    if [ "$volume_ok" != true ]; then
+        # Remove existing volume and any containers using it
+        for cid in $(docker ps -a -q --filter volume=zmk-config 2>/dev/null); do
+            docker stop "$cid" 2>/dev/null
+            docker rm "$cid" 2>/dev/null
+        done
+        docker volume rm zmk-config 2>/dev/null
+        echo "Creating zmk-config volume..."
+        docker volume create --driver local -o o=bind -o type=none -o device="$ZMK_CONFIG_DIR" zmk-config
+    fi
+}
 
 # Function to check if container is running
 is_container_running() {
@@ -43,6 +67,8 @@ build() {
     devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/draw.sh
     devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/build.sh
 }
+
+ensure_zmk_config_volume
 
 # Handle command line argument
 case "${1:-build}" in
