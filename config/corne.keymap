@@ -597,26 +597,26 @@ zmk/app/dts/bindings/zmk,combos.yaml
             repeated to reduce standard keyboard friction:
             - ESC: pinky ESC is an awkward reach for dismissing completions
                 - left thumb outer
-                - legacy: left pinky middle outer
+                - removed legacy: left pinky middle outer
             - ` (GRAVE):
                 - left pinky upper inner (on layer)
-                - legacy: left pinky outer upper
+                - removed legacy: left pinky outer upper
             - \ (BSLH):
                 - right index inner upper (on layer)
-                - legacy: right pinky outer upper
+                - removed legacy: right pinky outer upper
             - ' (SQT):
                 - right index middle inner (on layer)
-                - legacy: left pinky middle outer
+                - removed legacy: left pinky middle outer
             - HYPER:
                 - left pinky inner z (hold)
-                - legacy: left pinky middle outer (hold)
+                - removed legacy: left pinky middle outer (hold)
             - FUNCTION layer:
                 - legacy: left pinky outer lower
             */
 
             bindings = <
-&kp GRAVE          &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &kp BSLH
-LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &kp G                        &kp H RHRM_I_C(J) RHRM_M_C(K)           RHRM_R_C(L)   RHRM_P_C(SEMI) &kp SQT
+&none              &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &none
+&none              LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &kp G                        &kp H RHRM_I_C(J) RHRM_M_C(K)           RHRM_R_C(L)   RHRM_P_C(SEMI) &none
 &lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N &kp M       &kp COMMA             RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
                                            THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET           THM(SYM_PAD_C, SPACE) &mo MOUSE
             >;
@@ -627,8 +627,8 @@ LHRM_HYP(ESC)      LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &
             display-name = "BaseGsc";
 
             bindings = <
-&kp GRAVE          &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &kp BSLH
-LHRM_HYP(ESC)      LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &kp G                        &kp H RHRM_I_G(J) RHRM_M_G(K)           RHRM_R_G(L)   RHRM_P_G(SEMI) &kp SQT
+&none              &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &none
+&none              LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &kp G                        &kp H RHRM_I_G(J) RHRM_M_G(K)           RHRM_R_G(L)   RHRM_P_G(SEMI) &none
 &lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N &kp M       &kp COMMA             RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
                                            THM(MOUSE, ESC) THM(CURSOR_G, BSPC) THM(NUM_PAD_G, TAB)          &kp RET           THM(SYM_PAD_G, SPACE) &mo MOUSE
             >;
