@@ -44,12 +44,6 @@
 #define GRAVE_KEY_POSITION 1
 #define UNDER_GRAVE_KEY_POSITION 13
 
-/*
-timeout default 50ms
-zmk/app/dts/bindings/zmk,combos.yaml
-*/
-#define COMBO_TIMEOUT_MS 140
-
 // support left hand only operation
 // these are all the same as the default combos but with the left hand cursor layer key
 // add leading _ to prevent conflicts with ZMK
@@ -127,6 +121,13 @@ started at "normal" and moving towards "faster".
 // thumb row layer timings
 #define THUMB_TAPPING_TERM_MS 290
 #define THUMB_QUICK_TAP_MS 390
+
+/*
+combo timeout
+timeout default 50ms
+zmk/app/dts/bindings/zmk,combos.yaml
+*/
+#define COMBO_TIMEOUT_MS 140
 
 / {
     behaviors {
@@ -547,7 +548,7 @@ started at "normal" and moving towards "faster".
 
         // activate_terminal: grave + under grave on base layer
         activate_terminal_cags {
-            timeout-ms = <COMBO_TIMEOUT_MS>;
+            // default is sufficient timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LC(GRAVE)>;
             key-positions = <GRAVE_KEY_POSITION UNDER_GRAVE_KEY_POSITION>;
             layers = <BASE_C>;
@@ -555,7 +556,7 @@ started at "normal" and moving towards "faster".
 
         // comment_out_line: grave + under grave on cursor layer
         comment_out_line_cags {
-            timeout-ms = <COMBO_TIMEOUT_MS>;
+            // default is sufficient timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(FSLH)>;
             key-positions = <GRAVE_KEY_POSITION UNDER_GRAVE_KEY_POSITION>;
             layers = <CURSOR_C>;
