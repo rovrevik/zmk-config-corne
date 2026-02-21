@@ -102,32 +102,32 @@ For advanced tuning of HRM values, see: ZMK HRM Best Practice Values [SUNAKU]
 [TaylorKey: ZMK HRM Best Practice Values](https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8)
 started at "normal" and moving towards "faster".
 */
-#define HRM_I_TAPPING_TERM_MS 280
-#define HRM_I_QUICK_TAP_MS 390
-#define HRM_I_REQUIRE_PRIOR_IDLE_MS 190
+#define HRM_I_TAPPING_TERM_MS       282
+#define HRM_I_QUICK_TAP_MS          374
+#define HRM_I_REQUIRE_PRIOR_IDLE_MS 208
 
-#define HRM_M_TAPPING_TERM_MS 300
-#define HRM_M_QUICK_TAP_MS 390
-#define HRM_M_REQUIRE_PRIOR_IDLE_MS 240
+#define HRM_M_TAPPING_TERM_MS       299
+#define HRM_M_QUICK_TAP_MS          374
+#define HRM_M_REQUIRE_PRIOR_IDLE_MS 249
 
-#define HRM_R_TAPPING_TERM_MS 330
-#define HRM_R_QUICK_TAP_MS 390
-#define HRM_R_REQUIRE_PRIOR_IDLE_MS 240
+#define HRM_R_TAPPING_TERM_MS       324
+#define HRM_R_QUICK_TAP_MS          374
+#define HRM_R_REQUIRE_PRIOR_IDLE_MS 249
 
-#define HRM_P_TAPPING_TERM_MS 370
-#define HRM_P_QUICK_TAP_MS 390
-#define HRM_P_REQUIRE_PRIOR_IDLE_MS 240
+#define HRM_P_TAPPING_TERM_MS       357
+#define HRM_P_QUICK_TAP_MS          374
+#define HRM_P_REQUIRE_PRIOR_IDLE_MS 249
 
 // thumb row layer timings
-#define THUMB_TAPPING_TERM_MS 290
-#define THUMB_QUICK_TAP_MS 390
+#define THUMB_TAPPING_TERM_MS       291
+#define THUMB_QUICK_TAP_MS          374
 
 /*
 combo timeout
 timeout default 50ms
 zmk/app/dts/bindings/zmk,combos.yaml
 */
-#define COMBO_TIMEOUT_MS 140
+#define COMBO_TIMEOUT_MS            125
 
 / {
     behaviors {
