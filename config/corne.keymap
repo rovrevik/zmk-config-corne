@@ -598,10 +598,10 @@ started at "normal" and moving towards "faster".
                 - left pinky upper inner (on layer)
                 - legacy: left pinky outer upper
             - \ (BSLH):
-                - right pinky inner lower (on layer)
+                - right index inner upper (on layer)
                 - legacy: right pinky outer upper
             - ' (SQT):
-                - right pointer middle inner (on layer)
+                - right index middle inner (on layer)
                 - legacy: left pinky middle outer
             - HYPER:
                 - left pinky inner z (hold)
