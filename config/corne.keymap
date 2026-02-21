@@ -536,7 +536,8 @@ started at "normal" and moving towards "faster".
         };
         */
 
-        // gui_return: prevent home row gui + ret triggering d then return
+        // prevent home row gui + ret triggering d then return
+        // gui_return: gui + ret on base layer
         gui_return_cags {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(RET)>;
@@ -544,6 +545,7 @@ started at "normal" and moving towards "faster".
             layers = <BASE_C>;
         };
 
+        // activate_terminal: grave + under grave on base layer
         activate_terminal_cags {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LC(GRAVE)>;
@@ -551,6 +553,7 @@ started at "normal" and moving towards "faster".
             layers = <BASE_C>;
         };
 
+        // comment_out_line: grave + under grave on cursor layer
         comment_out_line_cags {
             timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(FSLH)>;
