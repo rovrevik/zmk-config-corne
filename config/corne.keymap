@@ -104,7 +104,8 @@ zmk/app/dts/bindings/zmk,combos.yaml
 /*
 home row timings
 For advanced tuning of HRM values, see: ZMK HRM Best Practice Values [SUNAKU]
-https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
+[rovrevik: ZMK HRM Best Practice Values](https://docs.google.com/spreadsheets/d/1GeZ9UrOPWeVbzzsioyp9oQYQoQKxpyiTL4z8DZa1vXg)
+[TaylorKey: ZMK HRM Best Practice Values](https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8)
 started at "normal" and moving towards "faster".
 */
 #define HRM_I_TAPPING_TERM_MS 280
