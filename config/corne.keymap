@@ -51,6 +51,7 @@
 #define _COPY LG(C)
 #define _PASTE LG(V)
 #define _UNDO LG(Z)
+#define _REDO LS(LG(Z))
 
 #define _QUIT LG(Q)
 #define _CLOSE LG(W)
@@ -572,19 +573,19 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "BaseCgs";
 
             /*
-            | Left Half:            |    | Right Half:           |
-            |   |   |   |   |   |   |    |   |   |   |   |   |   |
-            |   |   |   |   |   |   |    |   |   |   |   |   |   |
-            |   |   |   |   |   |   |    |   |   |   |   |   |   |
-            |           |   |   |   |    |   |   |   |           |
+            | Left Half:            |      | Right Half:           |
+            |   |   |   |   |   |   |      |   |   |   |   |   |   |
+            |   |   |   |   |   |   |      |   |   |   |   |   |   |
+            |   |   |   |   |   |   |      |   |   |   |   |   |   |
+            |           |   |   |   |      |   |   |   |           |
             */
 
             /*
-            | Left Half:                     |  | Right Half:                 |
-            |  `  | Q | W | E   | R    | T   |  | Y   | U     | I | O | P | \ |
-            | ESC | A | S | D   | F    | G   |  | H   | J     | K | L | ; | ' |
-            |     | Z | X | C   | V    | B   |  | N   | M     | , | . | / |   |
-            |             | ESC | BSPC | TAB |  | RET | SPACE |   |           |
+            | Left Half:                     |      | Right Half:                 |
+            |  `  | Q | W | E   | R    | T   |      | Y   | U     | I | O | P | \ |
+            | ESC | A | S | D   | F    | G   |      | H   | J     | K | L | ; | ' |
+            |     | Z | X | C   | V    | B   |      | N   | M     | , | . | / |   |
+            |             | ESC | BSPC | TAB |      | RET | SPACE |   |           |
             */
 
             /*
@@ -615,10 +616,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             */
 
             bindings = <
-&none              &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &none
-&none              LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &kp G                        &kp H RHRM_I_C(J) RHRM_M_C(K)           RHRM_R_C(L)   RHRM_P_C(SEMI) &none
-&lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N &kp M       &kp COMMA             RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
-                                           THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET           THM(SYM_PAD_C, SPACE) &mo MOUSE
+&none &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y   &kp U                 &kp I       &kp O         &kp P          &none
+&none LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &kp G                        &kp H   RHRM_I_C(J)           RHRM_M_C(K) RHRM_R_C(L)   RHRM_P_C(SEMI) &none
+&none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N   &kp M                 &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
+                              THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET THM(SYM_PAD_C, SPACE) &mo MOUSE
             >;
 
         };
@@ -627,22 +628,22 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "BaseGsc";
 
             bindings = <
-&none              &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y &kp U       &kp I                 &kp O         &kp P          &none
-&none              LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &kp G                        &kp H RHRM_I_G(J) RHRM_M_G(K)           RHRM_R_G(L)   RHRM_P_G(SEMI) &none
-&lt FUNCTION GLOBE LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N &kp M       &kp COMMA             RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
-                                           THM(MOUSE, ESC) THM(CURSOR_G, BSPC) THM(NUM_PAD_G, TAB)          &kp RET           THM(SYM_PAD_G, SPACE) &mo MOUSE
+&none &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y   &kp U                 &kp I       &kp O         &kp P          &none
+&none LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &kp G                        &kp H   RHRM_I_G(J)           RHRM_M_G(K) RHRM_R_G(L)   RHRM_P_G(SEMI) &none
+&none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N   &kp M                 &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
+                              THM(MOUSE, ESC) THM(CURSOR_G, BSPC) THM(NUM_PAD_G, TAB)          &kp RET THM(SYM_PAD_G, SPACE) &mo MOUSE
             >;
         };
 
         CURSOR_C {
-            display-name = "CsrCgs";
+            display-name = "CrsrCgs";
 
             /*
-            | Left Half:                                                 |   | Right Half:                          |
-            |          | _QUIT | _CLOSE | SPACE | _REFRESH | RET         |   |   |      |       |       |       |   |
-            | capsword | _ALL  | _SAVE  |       | _FIND    | _FIND_AGAIN |   |   | LEFT | DOWN  | UP    | RIGHT |   |
-            |          | _UNDO | _CUT   | _COPY | _PASTE   |             |   |   | HOME | PG_DN | PG_UP | END   |   |
-            |                           |       |          |             |   |   | DEL  |       |                   |
+            | Left Half:                                          |      | Right Half:                                   |
+            |   | _QUIT | _CLOSE | SPACE | _REFRESH | RET         |      | _REDO    | _PASTE | _COPY | _CUT  | _UNDO |   |
+            |   | _ALL  | _SAVE  |       | _FIND    | _FIND_AGAIN |      | capsword | LEFT   | DOWN  | UP    | RIGHT |   |
+            |   | _UNDO | _CUT   | _COPY | _PASTE   |             |      | INS      | HOME   | PG_DN | PG_UP | END   |   |
+            |                    |       |          |             |      | DEL      |        |       |                   |
             */
 
             // SPACE and RET are intentionally not on home row mod keys so there is repeat triggering
@@ -651,26 +652,27 @@ zmk/app/dts/bindings/zmk,combos.yaml
             // application shortcuts are being supported with macros
             // the T / RET shortcut conflicts with GUI + T to create an new tab in the browser
 
+            // Right hand is largley based on Miryoku
+
             //todo:
             // support home row mod on &capsword &hrm_l_p LCTRL &capsword
             // add COMMENT_OUT_LINE
 
             bindings = <
-&trans    &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
-&capsword LHRM_P_C(_ALL)  LHRM_R_C(_SAVE) &trans    LHRM_I_C(_FIND) &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans    LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
-                                          &trans    &trans          &trans                   &kp DEL &trans   &trans
-            >;
-        };
+&trans &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                     &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
+&trans LHRM_P_C(_ALL)  LHRM_R_C(_SAVE) &trans    LHRM_I_C(_FIND) &kp _FIND_AGAIN             &capsword &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                      &kp INS   &kp HOME   &kp PG_DN &kp PG_UP &kp END   &trans
+                                       &trans    &trans          &trans                      &kp DEL   &trans     &trans
+       >;      };
 
         CURSOR_G {
-            display-name = "CsrGsc";
+            display-name = "CrsrGsc";
 
             bindings = <
-&trans    &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                  &trans  &trans   &trans    &trans    &trans    &trans
-&capsword LHRM_P_G(_ALL)  LHRM_R_G(_SAVE) &trans    LHRM_I_G(_FIND) &kp _FIND_AGAIN          &trans  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-&trans    LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                   &trans  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans
-                                          &trans    &trans          &trans                   &kp DEL &trans   &trans
+&trans &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                     &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
+&trans LHRM_P_G(_ALL)  LHRM_R_G(_SAVE) &trans    LHRM_I_G(_FIND) &kp _FIND_AGAIN             &capsword &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &trans
+&trans LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                      &kp INS   &kp HOME   &kp PG_DN &kp PG_UP &kp END   &trans
+                                       &trans    &trans          &trans                      &kp DEL   &trans     &trans
             >;
         };
 
@@ -688,24 +690,24 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "NmPdCgs";
 
             /*
-            | Left Half:            |     | Right Half:           |
-            |   | ` |   | ( | ) |   |     | \ | 7 | 8 | 9 |   |   |
-            |   |   |   | [ | ] |   |     | ' | 4 | 5 | 6 | - |   |
-            |   |   |   | { | } |   |     | " | 1 | 2 | 3 | = |   |
-            |           |   |   |   |     |   |   | 0 |           |
+            | Left Half:              |      | Right Half:           |
+            |   | ` |   | ( | )   |   |      | \ | 7 | 8 | 9 |   |   |
+            |   |   |   | [ | ]   |   |      | ' | 4 | 5 | 6 | - |   |
+            |   |   |   | { | }   |   |      | " | 1 | 2 | 3 | = |   |
+            |           |   | DEL |   |      |   |   | 0 |           |
 
-            | Left Half:            |     | Right Half:           |
-            |   | ~ |   | ( | ) |   |     | | | & | * |   |   |   |
-            |   |   |   | [ | ] |   |     | " | $ | % | ^ | _ |   |
-            |   |   |   | { | } |   |     | " | ! | @ | # | + |   |
-            |           |   |   |   |     |   |   |   |           |
+            | Left Half:              |      | Right Half:           |
+            |   | ~ |   | ( | )   |   |      | | | & | * |   |   |   |
+            |   |   |   | [ | ]   |   |      | " | $ | % | ^ | _ |   |
+            |   |   |   | { | }   |   |      | " | ! | @ | # | + |   |
+            |           |   | DEL |   |      |   |   |   |           |
             */
 
             bindings = <
-&none &kp GRAVE &none  &kp LPAR       &kp RPAR       &none           &kp BSLH &kp N7          &kp N8         &kp N9          &none           &none
-&none &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C(MINUS) &none
-&none &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &none
-                       &trans         &trans         &trans          &trans   &trans          &kp N0
+&trans &kp GRAVE &none  &kp LPAR       &kp RPAR       &none           &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C(MINUS) &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
+                        &trans         &kp DEL        &trans          &trans   &trans          &kp N0
             >;
         };
 
@@ -713,10 +715,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "NmPdGsc";
 
             bindings = <
-&none &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &none
-&none &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(N4)    RHRM_M_G(N5)   RHRM_R_G(N6)    RHRM_P_G(MINUS) &none
-&none &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &none
-                       &trans         &trans         &trans          &trans   &trans          &kp N0
+&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
+&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(N4)    RHRM_M_G(N5)   RHRM_R_G(N6)    RHRM_P_G(MINUS) &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
+                        &trans         &kp DEL        &trans          &trans   &trans          &kp N0
             >;
         };
 
@@ -724,10 +726,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdCgs";
 
             bindings = <
-&none &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &none
-&none &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &none
-&none &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &none
-                       &trans         &trans         &trans          &trans   &trans         &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
+                        &trans         &kp DEL        &trans          &trans   &trans         &trans
             >;
         };
 
@@ -735,10 +737,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdGsc";
 
             bindings = <
-&none &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &none
-&none &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &none
-&none &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &none
-                       &trans         &trans         &trans          &trans   &trans         &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &trans
+&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
+                        &trans         &kp DEL        &trans          &trans   &trans         &trans
             >;
         };
 
@@ -746,18 +748,18 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "FnPd";
 
             /*
-            | Left Half:                        |    | Right Half:                |
-            |   | CAGS | GASC |     | C   | CA  |    |   | F7 | F8 | F9 | F10 |   |
-            |   |      |      |     | BL  | SU  |    |   | F4 | F5 | F6 | F12 |   |
-            |   | BT0  | BT1  | BT2 | BT3 | BT4 |    |   | F1 | F2 | F3 | F11 |   |
-            |                 |     |     |     |    |   |    |    |              |
+            | Left Half:                        |      | Right Half:                |
+            |   | CAGS | GASC |     | C   | CA  |      |   | F7 | F8 | F9 | F10 |   |
+            |   |      |      |     | BL  | SU  |      |   | F4 | F5 | F6 | F12 |   |
+            |   | BT0  | BT1  | BT2 | BT3 | BT4 |      |   | F1 | F2 | F3 | F11 |   |
+            |                 |     |     |     |      |   |    |    |              |
             */
 
             bindings = <
-&none &to BASE_C   &to BASE_G     &none        &bt BT_CLR   &bt BT_CLR_ALL          &none  &kp F7 &kp F8 &kp F9 &kp F10 &none
-&none &none        &none          &none        &bootloader  &studio_unlock          &none  &kp F4 &kp F5 &kp F6 &kp F12 &none
-&none &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &none  &kp F1 &kp F2 &kp F3 &kp F11 &none
-                                  &trans       &trans       &trans                  &trans &trans &trans
+&trans &to BASE_C   &to BASE_G   &none        &bt BT_CLR   &bt BT_CLR_ALL          &none  &kp F7 &kp F8 &kp F9 &kp F10 &trans
+&trans &none        &none        &none        &bootloader  &studio_unlock          &none  &kp F4 &kp F5 &kp F6 &kp F12 &trans
+&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &none  &kp F1 &kp F2 &kp F3 &kp F11 &trans
+                                 &trans       &trans       &trans                  &trans &trans &trans
             >;
         };
 
@@ -765,10 +767,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
         MOUSE {
             display-name = "Mouse";
             bindings = <
-&none &none &none          &mmv MOVE_UP   &none           &msc SCRL_UP            &none &mkp LCLK      &mkp RCLK      &mkp MCLK    &none           &msc SCRL_UP
-&none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN          &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &msc SCRL_DOWN
-&none &none &none          &none          &none           &none                   &none &none          &none          &none        &none           &none
-                           &none          &none           &none                   &none &none          &none
+&trans &none &none          &mmv MOVE_UP   &none           &msc SCRL_UP           &none &mkp LCLK      &mkp RCLK      &mkp MCLK    &none           &msc SCRL_UP
+&trans &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN         &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &msc SCRL_DOWN
+&trans &none &none          &none          &none           &none                  &none &none          &none          &none        &none           &trans
+                            &none          &none           &none                  &none &none          &none
             >;
         };
 
@@ -779,10 +781,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
         FUNCTION {
             display-name = "Function";
             bindings = <
-&trans &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
-                     &trans &kp DEL &trans          &trans &trans &trans
+&trans             &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
+&trans             &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
+&lt FUNCTION GLOBE &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
+                                 &trans &kp DEL &trans          &trans &trans &trans
             >;
         };
 
@@ -809,11 +811,11 @@ zmk/app/dts/bindings/zmk,combos.yaml
         SYM {
             display-name = "Symbols";
 
-            | Left Half:            |    | Right Half:           |
-            |   | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |   |
-            |   |   |   |   |   |   |    |   | - | = | [ | ] |   |
-            |   |   |   |   |   |   |    |   |   |   |   | \ |   |
-            |           |   |   |   |    |   |   |   |           |
+            | Left Half:            |      | Right Half:           |
+            |   | ! | @ | # | $ | % |      | ^ | & | * | ( | ) |   |
+            |   |   |   |   |   |   |      |   | - | = | [ | ] |   |
+            |   |   |   |   |   |   |      |   |   |   |   | \ |   |
+            |           |   |   |   |      |   |   |   |           |
 
             bindings = <
 &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT          &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &trans

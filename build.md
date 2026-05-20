@@ -8,6 +8,11 @@ Check out the tag for the desired ZMK version.
 docker volume create --driver local -o o=bind -o type=none -o device="$(pwd)" zmk-config
 docker volume inspect zmk-config
 ```
+on zmk checkout or pull:
+```bash
+# errored doing this: west init -l app/ # Initialization (takes a very long time)
+west update       # Update modules
+```
 
 dont need to create a zmk-module volume.
 When you DON'T need zmk-modules:
@@ -21,11 +26,6 @@ When you DON'T need zmk-modules:
 open ./devcontainer.sh
 ```
 
-on zmk checkout or pull:
-```bash
-west init -l app/ # Initialization (takes a very long time)
-west update       # Update modules
-```
 
 **Troubleshooting:** If you get "No board named 'nice_nano' found":
 1. Ensure `west update` has been run to fetch all board definitions
