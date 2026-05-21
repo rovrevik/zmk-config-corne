@@ -727,6 +727,14 @@ zmk/app/dts/bindings/zmk,combos.yaml
                 - removed legacy: left pinky middle outer (hold)
             - FUNCTION layer:
                 - legacy: left pinky outer lower
+
+            The base layer thumb keys are based on [Miryoku](https://github.com/manna-harbour/miryoku)
+            ESC: Miryoku
+            BSPC (SPACE on Miryoku): reduce friction with normal keyboard
+            TAB: Miryoku
+
+            RET: Miryoku
+            SPACE (BSPC on Miryoku)
             */
 
             bindings = <
@@ -766,7 +774,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             // application shortcuts are being supported with macros
             // the T / RET shortcut conflicts with GUI + T to create an new tab in the browser
 
-            // Right hand is largley based on Miryoku
+            // Right hand is based on [Miryoku](https://github.com/manna-harbour/miryoku)
 
             //todo:
             // support home row mod on &capsword &hrm_l_p LCTRL &capsword
