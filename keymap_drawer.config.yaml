@@ -2,6 +2,27 @@
 # Use full ZMK binding strings (&kp LG(...)); Gui+Z-style keys are resolved after parsing.
 # https://github.com/caksoylar/keymap-drawer/blob/main/docs/CONFIGURATION.md#raw_binding_map
 parse_config:
+  # Hide combos from SVG only (firmware unchanged). Node names match config/corne.keymap.
+  zmk_combos:
+    # Left-thumb + home-row roll shortcuts (BASE_C / BASE_G)
+    lthm_a_cags: { hidden: true }
+    lthm_a_gasc: { hidden: true }
+    lthm_s_cags: { hidden: true }
+    lthm_s_gasc: { hidden: true }
+    lthm_f_cags: { hidden: true }
+    lthm_f_gasc: { hidden: true }
+    lthm_g_cags: { hidden: true }
+    lthm_g_gasc: { hidden: true }
+    lthm_z_cags: { hidden: true }
+    lthm_z_gasc: { hidden: true }
+    lthm_x_cags: { hidden: true }
+    lthm_x_gasc: { hidden: true }
+    lthm_c_cags: { hidden: true }
+    lthm_c_gasc: { hidden: true }
+    lthm_v_cags: { hidden: true }
+    lthm_v_gasc: { hidden: true }
+    gui_return_cags: { hidden: true }
+
   raw_binding_map:
     # CURSOR shortcuts (#define _NAME LG(...))
     '&kp LG(Q)': quit

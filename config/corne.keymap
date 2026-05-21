@@ -40,6 +40,16 @@
 // Key positions for combos
 #define LGUI_KEY_POSITION_C 15
 #define LTHM_KEY_POSITION 37
+#define A_KEY_POSITION 13
+#define S_KEY_POSITION 14
+#define F_KEY_POSITION 16
+#define G_KEY_POSITION 17
+#define Z_KEY_POSITION 25
+#define X_KEY_POSITION 26
+#define C_KEY_POSITION 27
+#define V_KEY_POSITION 28
+/* left-thumb-middle + left rolls (subset of LEFT_KEY_POSITIONS) */
+#define LTHM_ROLL_KEY_POSITIONS A_KEY_POSITION S_KEY_POSITION F_KEY_POSITION G_KEY_POSITION Z_KEY_POSITION X_KEY_POSITION C_KEY_POSITION V_KEY_POSITION
 #define RT_RET_KEY_POSITION 39
 #define GRAVE_KEY_POSITION 1
 #define UNDER_GRAVE_KEY_POSITION 13
@@ -128,7 +138,9 @@ combo timeout
 timeout default 50ms
 zmk/app/dts/bindings/zmk,combos.yaml
 */
-#define COMBO_TIMEOUT_MS            125
+#define COMBO_TIMEOUT_MS                    125
+#define LEFT_GUI_ROLL_COMBO_TIMEOUT_MS      250
+#define GUI_RETURN_ROLL_COMBO_TIMEOUT_MS    250
 
 / {
     behaviors {
@@ -538,10 +550,112 @@ zmk/app/dts/bindings/zmk,combos.yaml
         };
         */
 
-        // prevent home row gui + ret triggering d then return
-        // gui_return: gui + ret on base layer
+        /*
+        left thumb middle (CURSOR/BSPC) + left roll keys on BASE layers.
+        Avoids hold-trigger-key-positions on thumb_ht (breaks cross-hand layer + J).
+        Bindings match CURSOR_C left-half shortcuts where applicable.
+        */
+        lthm_a_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _ALL>;
+            key-positions = <LTHM_KEY_POSITION A_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_a_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _ALL>;
+            key-positions = <LTHM_KEY_POSITION A_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+        lthm_s_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _SAVE>;
+            key-positions = <LTHM_KEY_POSITION S_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_s_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _SAVE>;
+            key-positions = <LTHM_KEY_POSITION S_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+        lthm_f_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _FIND>;
+            key-positions = <LTHM_KEY_POSITION F_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_f_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _FIND>;
+            key-positions = <LTHM_KEY_POSITION F_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+        lthm_g_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _FIND_AGAIN>;
+            key-positions = <LTHM_KEY_POSITION G_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_g_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _FIND_AGAIN>;
+            key-positions = <LTHM_KEY_POSITION G_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+        lthm_z_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _UNDO>;
+            key-positions = <LTHM_KEY_POSITION Z_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_z_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _UNDO>;
+            key-positions = <LTHM_KEY_POSITION Z_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+        lthm_x_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _CUT>;
+            key-positions = <LTHM_KEY_POSITION X_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_x_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _CUT>;
+            key-positions = <LTHM_KEY_POSITION X_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+        lthm_c_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _COPY>;
+            key-positions = <LTHM_KEY_POSITION C_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_c_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _COPY>;
+            key-positions = <LTHM_KEY_POSITION C_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+        lthm_v_cags {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _PASTE>;
+            key-positions = <LTHM_KEY_POSITION V_KEY_POSITION>;
+            layers = <BASE_C>;
+        };
+        lthm_v_gasc {
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
+            bindings = <&kp _PASTE>;
+            key-positions = <LTHM_KEY_POSITION V_KEY_POSITION>;
+            layers = <BASE_G>;
+        };
+
+        // Cmd+Enter: D (Gui HRM, pos 15) + inner right thumb Ret (pos 39)
+        // combo avoids roll sending "d" then Ret when Gui releases before Ret
         gui_return_cags {
-            timeout-ms = <COMBO_TIMEOUT_MS>;
+            timeout-ms = <GUI_RETURN_ROLL_COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(RET)>;
             key-positions = <LGUI_KEY_POSITION_C RT_RET_KEY_POSITION>;
             layers = <BASE_C>;
