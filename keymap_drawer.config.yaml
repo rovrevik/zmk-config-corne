@@ -1,0 +1,45 @@
+# keymap-drawer label overrides for config/corne.keymap
+# Use full ZMK binding strings (&kp LG(...)); Gui+Z-style keys are resolved after parsing.
+# https://github.com/caksoylar/keymap-drawer/blob/main/docs/CONFIGURATION.md#raw_binding_map
+parse_config:
+  raw_binding_map:
+    # CURSOR shortcuts (#define _NAME LG(...))
+    '&kp LG(Q)': quit
+    '&kp LG(W)': close
+    '&kp LG(R)': refresh
+    '&kp LG(A)': all
+    '&kp LG(S)': save
+    '&kp LG(F)': find
+    '&kp LG(G)': next
+    '&kp LG(C)': copy
+    '&kp LG(V)': paste
+    '&kp LG(X)': cut
+    '&kp LG(Z)': undo
+    '&kp LS(LG(Z))': redo
+
+    # Combos
+    '&kp LG(RET)': gui+ret
+    '&kp LC(GRAVE)': terminal
+    '&kp LG(FSLH)': comment
+
+    # Behaviors
+    # '&bootloader': BOOT
+    # '&studio_unlock': STUDIO
+    # '&capsword': capsword
+
+    # Hyper / Meh holds (expanded from LHYPER / LMEH / RHYPER / RMEH)
+    '&kp LC(LA(LG(LSHFT)))': lhyper
+    '&kp LC(LA(LSHFT))': lmeh
+    '&kp RC(RA(RG(RSHFT)))': rhyper
+    '&kp RC(RA(RSHFT))': rmeh
+
+    # Mouse layer
+    '&mkp LCLK': lclick
+    '&mkp RCLK': rclick
+    '&mkp MCLK': mclick
+    '&mmv MOVE_UP': up
+    '&mmv MOVE_DOWN': down
+    '&mmv MOVE_LEFT': left
+    '&mmv MOVE_RIGHT': right
+    '&msc SCRL_UP': uscroll
+    '&msc SCRL_DOWN': dscroll

@@ -7,7 +7,8 @@ if ! command -v keymap &> /dev/null; then
 fi
 
 # Parse the keymap and draw SVGs
+CONFIG=/workspaces/zmk-config/keymap_drawer.config.yaml
 mkdir -p /workspaces/zmk/build/keymap
-keymap parse -z /workspaces/zmk-config/config/corne.keymap > /workspaces/zmk/build/keymap/keymap.yaml
-keymap draw /workspaces/zmk/build/keymap/keymap.yaml > /workspaces/zmk/build/keymap/keymap.svg
+keymap -c "$CONFIG" parse -z /workspaces/zmk-config/config/corne.keymap > /workspaces/zmk/build/keymap/keymap.yaml
+keymap -c "$CONFIG" draw /workspaces/zmk/build/keymap/keymap.yaml > /workspaces/zmk/build/keymap/keymap.svg
 echo "Generated build/keymap/keymap.svg"
