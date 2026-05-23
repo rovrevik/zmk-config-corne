@@ -274,7 +274,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             compatible = "zmk,behavior-tap-dance";
             label = "PARA";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
         };
         */
 
@@ -283,7 +283,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             compatible = "zmk,behavior-caps-word";
             label = "CAPS";
             #binding-cells = <0>;
-            continue-list = <MINUS BACKSPACE>;
+            continue-list = <MINUS BSPC>;
         };
         */
 
@@ -298,7 +298,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         paraless: paraless {
             compatible = "zmk,behavior-mod-morph";
             label = "PARALESS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+            bindings = <&kp LPAR>, <&kp LT>;
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
@@ -308,7 +308,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         paragreat: paragreat {
             compatible = "zmk,behavior-mod-morph";
             label = "PARAGREAT";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+            bindings = <&kp RPAR>, <&kp GT>;
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
@@ -384,17 +384,17 @@ zmk/app/dts/bindings/zmk,combos.yaml
         /*
         default combos that i don't use but might be useful for reference when adding new ones
         escape {
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp ESC>;
             key-positions = <13 29>;
         };
 
         delete {
-            bindings = <&kp DELETE>;
+            bindings = <&kp DEL>;
             key-positions = <15 21>;
         };
 
         perc {
-            bindings = <&kp PERCENT>;
+            bindings = <&kp PRCNT>;
             key-positions = <5 17>;
         };
 
@@ -404,7 +404,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         };
 
         dollar {
-            bindings = <&kp DOLLAR>;
+            bindings = <&kp DLLR>;
             key-positions = <4 16>;
         };
 
@@ -419,7 +419,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         };
 
         backslash {
-            bindings = <&kp BACKSLASH>;
+            bindings = <&kp BSLH>;
             key-positions = <26 14>;
         };
 
@@ -439,7 +439,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         };
 
         slash {
-            bindings = <&kp SLASH>;
+            bindings = <&kp FSLH>;
             key-positions = <32 20>;
         };
 
@@ -454,17 +454,17 @@ zmk/app/dts/bindings/zmk,combos.yaml
         };
 
         underscore {
-            bindings = <&kp UNDERSCORE>;
+            bindings = <&kp UNDER>;
             key-positions = <30 18>;
         };
 
         leftbrack {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&kp LBKT>;
             key-positions = <31 32>;
         };
 
         rightbrack {
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&kp RBKT>;
             key-positions = <33 32>;
         };
 
@@ -850,7 +850,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdCgs";
 
             bindings = <
-&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &none           &none           &trans
 &trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
                         &trans         &trans         &trans          &trans   &trans         &trans
@@ -861,7 +861,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdGsc";
 
             bindings = <
-&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &none           &none           &trans
 &trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
                         &trans         &trans         &trans          &trans   &trans         &trans
