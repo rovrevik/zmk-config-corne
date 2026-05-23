@@ -695,11 +695,11 @@ zmk/app/dts/bindings/zmk,combos.yaml
             */
 
             /*
-            | Left Half:                     |      | Right Half:                 |
-            |  `  | Q | W | E   | R    | T   |      | Y   | U     | I | O | P | \ |
-            | ESC | A | S | D   | F    | G   |      | H   | J     | K | L | ; | ' |
-            |     | Z | X | C   | V    | B   |      | N   | M     | , | . | / |   |
-            |             | ESC | BSPC | TAB |      | RET | SPACE |   |           |
+            | Left Half:                   |      | Right Half:                   |
+            |   | Q | W | E   | R    | T   |      | Y   | U     | I   | O | P |   |
+            |   | A | S | D   | F    | G   |      | H   | J     | K   | L | ; |   |
+            |   | Z | X | C   | V    | B   |      | N   | M     | ,   | . | / |   |
+            |           | ESC | BSPC | TAB |      | RET | SPACE | DEL |           |
             */
 
             /*
@@ -729,19 +729,21 @@ zmk/app/dts/bindings/zmk,combos.yaml
                 - legacy: left pinky outer lower
 
             The base layer thumb keys are based on [Miryoku](https://github.com/manna-harbour/miryoku)
+            thumb home swapped
             ESC: Miryoku
             BSPC (SPACE on Miryoku): reduce friction with normal keyboard
             TAB: Miryoku
 
             RET: Miryoku
-            SPACE (BSPC on Miryoku)
+            SPACE (BSPC on Miryoku): reduce friction with normal keyboard. it is absolutly to wierd to map the space bar to anything other than the home thumb on a real keyboard.
+            DEL: Miryoku
             */
 
             bindings = <
 &none &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y   &kp U                 &kp I       &kp O         &kp P          &none
 &none LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &kp G                        &kp H   RHRM_I_C(J)           RHRM_M_C(K) RHRM_R_C(L)   RHRM_P_C(SEMI) &none
 &none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N   &kp M                 &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
-                              THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET THM(SYM_PAD_C, SPACE) &mo MOUSE
+                              THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET THM(SYM_PAD_C, SPACE) &kp DEL
             >;
 
         };
@@ -753,7 +755,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
 &none &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y   &kp U                 &kp I       &kp O         &kp P          &none
 &none LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &kp G                        &kp H   RHRM_I_G(J)           RHRM_M_G(K) RHRM_R_G(L)   RHRM_P_G(SEMI) &none
 &none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N   &kp M                 &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
-                              THM(MOUSE, ESC) THM(CURSOR_G, BSPC) THM(NUM_PAD_G, TAB)          &kp RET THM(SYM_PAD_G, SPACE) &mo MOUSE
+                              THM(MOUSE, ESC) THM(CURSOR_G, BSPC) THM(NUM_PAD_G, TAB)          &kp RET THM(SYM_PAD_G, SPACE) &kp DEL
             >;
         };
 
@@ -765,7 +767,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             |   | _QUIT | _CLOSE | SPACE | _REFRESH | RET         |      | _REDO    | _PASTE | _COPY | _CUT  | _UNDO |   |
             |   | _ALL  | _SAVE  |       | _FIND    | _FIND_AGAIN |      | capsword | LEFT   | DOWN  | UP    | RIGHT |   |
             |   | _UNDO | _CUT   | _COPY | _PASTE   |             |      | INS      | HOME   | PG_DN | PG_UP | END   |   |
-            |                    |       |          |             |      | DEL      |        |       |                   |
+            |                    |       |          |             |      |          |        |       |                   |
             */
 
             // SPACE and RET are intentionally not on home row mod keys so there is repeat triggering
@@ -784,7 +786,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
 &trans &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                     &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
 &trans LHRM_P_C(_ALL)  LHRM_R_C(_SAVE) &trans    LHRM_I_C(_FIND) &kp _FIND_AGAIN             &capsword &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &trans
 &trans LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                      &kp INS   &kp HOME   &kp PG_DN &kp PG_UP &kp END   &trans
-                                       &trans    &trans          &trans                      &kp DEL   &trans     &trans
+                                       &trans    &trans          &trans                      &trans    &trans     &trans
        >;      };
 
         CURSOR_G {
@@ -794,7 +796,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
 &trans &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                     &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
 &trans LHRM_P_G(_ALL)  LHRM_R_G(_SAVE) &trans    LHRM_I_G(_FIND) &kp _FIND_AGAIN             &capsword &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &trans
 &trans LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                      &kp INS   &kp HOME   &kp PG_DN &kp PG_UP &kp END   &trans
-                                       &trans    &trans          &trans                      &kp DEL   &trans     &trans
+                                       &trans    &trans          &trans                      &trans    &trans     &trans
             >;
         };
 
@@ -822,7 +824,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             |   | ~ |   | ( | )   |   |      | | | & | * |   |   |   |
             |   |   |   | [ | ]   |   |      | " | $ | % | ^ | _ |   |
             |   |   |   | { | }   |   |      | " | ! | @ | # | + |   |
-            |           |   | DEL |   |      |   |   |   |           |
+            |           |   |     |   |      |   |   |   |           |
             */
 
             bindings = <
@@ -851,7 +853,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
 &trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &trans
 &trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
-                        &trans         &kp DEL        &trans          &trans   &trans         &trans
+                        &trans         &trans         &trans          &trans   &trans         &trans
             >;
         };
 
@@ -862,7 +864,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
 &trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp ASTRK       &none           &none           &trans
 &trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
-                        &trans         &kp DEL        &trans          &trans   &trans         &trans
+                        &trans         &trans         &trans          &trans   &trans         &trans
             >;
         };
 
@@ -898,15 +900,14 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
         /*
         function layer to emulate the lower outer left globe/fn key on macOS keyboards
-        DEL overrides BACKSPACE
         */
         FUNCTION {
             display-name = "Function";
             bindings = <
-&trans             &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
-&trans             &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
-&lt FUNCTION GLOBE &trans &trans &trans &trans  &trans          &trans &trans &trans &trans &trans &trans
-                                 &trans &kp DEL &trans          &trans &trans &trans
+&trans             &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans &trans
+&trans             &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans &trans
+&lt FUNCTION GLOBE &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans &trans
+                                 &trans &trans &trans          &trans &trans &trans
             >;
         };
 
