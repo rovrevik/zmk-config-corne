@@ -774,7 +774,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
             /*
             | Left Half:                                          |      | Right Half:                                   |
-            |   | _QUIT | _CLOSE | SPACE | _REFRESH | RET         |      | _REDO    | _PASTE | _COPY | _CUT  | _UNDO |   |
+            |   | _QUIT | _CLOSE |       | _REFRESH |             |      | _REDO    | _PASTE | _COPY | _CUT  | _UNDO |   |
             |   | _ALL  | _SAVE  |       | _FIND    | _FIND_AGAIN |      | capsword | LEFT   | DOWN  | UP    | RIGHT |   |
             |   | _UNDO | _CUT   | _COPY | _PASTE   |             |      | INS      | HOME   | PG_DN | PG_UP | END   |   |
             |                    |       |          |             |      |          |        |       |                   |
@@ -793,7 +793,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             // add COMMENT_OUT_LINE
 
             bindings = <
-&trans &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                     &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
+&trans &kp _QUIT       &kp _CLOSE      &trans    &kp _REFRESH    &trans                      &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
 &trans LHRM_P_C(_ALL)  LHRM_R_C(_SAVE) &trans    LHRM_I_C(_FIND) &kp _FIND_AGAIN             &capsword &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &trans
 &trans LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                      &kp INS   &kp HOME   &kp PG_DN &kp PG_UP &kp END   &trans
                                        &trans    &trans          &trans                      &trans    &trans     &trans
@@ -803,7 +803,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "CrsrGsc";
 
             bindings = <
-&trans &kp _QUIT       &kp _CLOSE      &kp SPACE &kp _REFRESH    &kp RET                     &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
+&trans &kp _QUIT       &kp _CLOSE      &trans    &kp _REFRESH    &trans                      &kp _REDO &kp _PASTE &kp _COPY &kp _CUT  &kp _UNDO &trans
 &trans LHRM_P_G(_ALL)  LHRM_R_G(_SAVE) &trans    LHRM_I_G(_FIND) &kp _FIND_AGAIN             &capsword &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &trans
 &trans LHRM_HYP(_UNDO) LHRM_MEH(_CUT)  &kp _COPY &kp _PASTE      &trans                      &kp INS   &kp HOME   &kp PG_DN &kp PG_UP &kp END   &trans
                                        &trans    &trans          &trans                      &trans    &trans     &trans
