@@ -828,7 +828,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             */
 
             bindings = <
-&trans &kp GRAVE &none  &kp LPAR       &kp RPAR       &none           &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
+&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
 &trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C(MINUS) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
                         &trans         &kp DEL        &trans          &trans   &trans          &kp N0
