@@ -824,24 +824,24 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "NmPdCgs";
 
             /*
-            | Left Half:              |      | Right Half:           |
-            |   | ` |   | ( | )   |   |      | \ | 7 | 8 | 9 |   |   |
-            |   |   |   | [ | ]   |   |      | ' | 4 | 5 | 6 | - |   |
-            |   |   |   | { | }   |   |      | " | 1 | 2 | 3 | = |   |
-            |           |   | DEL |   |      |   |   | 0 |           |
+            | Left Half:                   |      | Right Half:           |
+            |   | ` |   | (   | )    |     |      | \ | 7 | 8 | 9 |   |   |
+            |   |   |   | [   | ]    | RET |      | ' | 4 | 5 | 6 | - |   |
+            |   |   |   | {   | }    |     |      | " | 1 | 2 | 3 | = |   |
+            |           | DEL | BSPC |     |      |   |   | 0 |           |
 
-            | Left Half:              |      | Right Half:           |
-            |   | ~ |   | ( | )   |   |      | | | & | * |   |   |   |
-            |   |   |   | [ | ]   |   |      | " | $ | % | ^ | _ |   |
-            |   |   |   | { | }   |   |      | " | ! | @ | # | + |   |
-            |           |   |     |   |      |   |   |   |           |
+            | Left Half:                   |      | Right Half:           |
+            |   | ~ |   | (   | )    |     |      | | | & | * |   |   |   |
+            |   |   |   | [   | ]    | RET |      | " | $ | % | ^ | _ |   |
+            |   |   |   | {   | }    |     |      | " | ! | @ | # | + |   |
+            |           | DEL | BSPC |     |      |   |   |   |           |
             */
 
             bindings = <
 &trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
-&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C(MINUS) &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C(MINUS) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
-                        &trans         &kp DEL        &trans          &trans   &trans          &kp N0
+                        &kp DEL        &kp BSPC       &trans          &trans   &trans          &kp N0
             >;
         };
 
@@ -850,9 +850,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
             bindings = <
 &trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
-&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(N4)    RHRM_M_G(N5)   RHRM_R_G(N6)    RHRM_P_G(MINUS) &trans
+&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &kp RET         &kp SQT  RHRM_I_G(N4)    RHRM_M_G(N5)   RHRM_R_G(N6)    RHRM_P_G(MINUS) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
-                        &trans         &kp DEL        &trans          &trans   &trans          &kp N0
+                        &kp DEL        &kp BSPC       &trans          &trans   &trans          &kp N0
             >;
         };
 
@@ -861,9 +861,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
             bindings = <
 &trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &none           &none           &trans
-&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
-                        &trans         &trans         &trans          &trans   &trans         &trans
+                        &kp DEL        &kp BSPC       &trans          &trans   &trans         &trans
             >;
         };
 
@@ -872,9 +872,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
             bindings = <
 &trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &none           &none           &trans
-&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
+&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &kp RET         &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
-                        &trans         &trans         &trans          &trans   &trans         &trans
+                        &kp DEL        &kp BSPC       &trans          &trans   &trans         &trans
             >;
         };
 
