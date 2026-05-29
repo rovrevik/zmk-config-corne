@@ -695,21 +695,41 @@ zmk/app/dts/bindings/zmk,combos.yaml
             */
 
             /*
-            | Left Half:                   |      | Right Half:                   |
-            |   | Q | W | E   | R    | T   |      | Y   | U     | I   | O | P |   |
-            |   | A | S | D   | F    | G   |      | H   | J     | K   | L | ; |   |
-            |   | Z | X | C   | V    | B   |      | N   | M     | ,   | . | / |   |
-            |           | ESC | BSPC | TAB |      | RET | SPACE | DEL |           |
+            | Left Half:                    |      | Right Half:                  |
+            |   | Q | W | E   | R     | T   |      | Y   | U    | I   | O | P |   |
+            |   | A | S | D   | F     | G   |      | H   | J    | K   | L | ; |   |
+            |   | Z | X | C   | V     | B   |      | N   | M    | ,   | . | / |   |
+            |           | ESC | SPACE | TAB |      | RET | BSPC | DEL |           |
             */
 
             /*
-            hyper and meh considerations:
-            - hyper commonly is mapped to hold caps so it should be triggered with pinky
-            - z and x are good candidates for hyper and meh because the letters are less frequently used
-            GUI on left home row + TAB on left inner thumb is comfortable for single hand use
-            minimize use of outer pinky columns to reduce uncomfortable stretches
+            thumb keys considerations:
+            It is absolutly to wierd to map space to anything other than the space bar on a normal keyboard.
+            It is quivalently wierd to map the space to other position than the right or left middle thumb becuase
+                it is most common used and should be on the primary thumb key.
 
-            repeated to reduce standard keyboard friction:
+            The vast majority of keymaps have:
+            - left thumb middle: SPACE
+            - right thumb middle: BSPC
+
+            There is some fricton transitioning to a normal keyboard because the the sapce key is duplicated.
+            macOS: fn ESC (control) SPACE (option) TAB (command) SPACE (space bar)
+
+            The base layer thumb keys are [Miryoku](https://github.com/manna-harbour/miryoku)
+            - left thumb outer: ESC
+            - left thumb middle: SPACE
+            - left thumb inner: TAB
+            - right thum inner: RET
+            - right thumb middle: BSPC
+            - right thumb outer: DEL
+
+            Hyper and Meh considerations:
+            - Hyper commonly is mapped to hold caps so it should be triggered with pinky
+            - z and x are good candidates for hyper and meh because the letters are less frequently used.
+            - GUI + inner thumb (TAB) for single hand application cycling
+            - GUI + inner thumb (TAB) + ` (q) for single hand application window cycling
+
+            relocated pinky stretches:
             - ESC: pinky ESC is an awkward reach for dismissing completions
                 - left thumb outer
                 - removed legacy: left pinky middle outer
@@ -726,24 +746,14 @@ zmk/app/dts/bindings/zmk,combos.yaml
                 - left pinky inner z (hold)
                 - removed legacy: left pinky middle outer (hold)
             - FUNCTION layer:
-                - legacy: left pinky outer lower
-
-            The base layer thumb keys are based on [Miryoku](https://github.com/manna-harbour/miryoku)
-            thumb home swapped
-            ESC: Miryoku
-            BSPC (SPACE on Miryoku): reduce friction with normal keyboard
-            TAB: Miryoku
-
-            RET: Miryoku
-            SPACE (BSPC on Miryoku): reduce friction with normal keyboard. it is absolutly to wierd to map the space bar to anything other than the home thumb on a real keyboard.
-            DEL: Miryoku
+                - removed legacy: left pinky outer lower
             */
 
             bindings = <
-&none &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y   &kp U                 &kp I       &kp O         &kp P          &none
-&none LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)         &kp G                        &kp H   RHRM_I_C(J)           RHRM_M_C(K) RHRM_R_C(L)   RHRM_P_C(SEMI) &none
-&none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N   &kp M                 &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
-                              THM(MOUSE, ESC) THM(CURSOR_C, BSPC) THM(NUM_PAD_C, TAB)          &kp RET THM(SYM_PAD_C, SPACE) &kp DEL
+&none &kp Q       &kp W       &kp E           &kp R                &kp T                        &kp Y   &kp U                &kp I       &kp O         &kp P          &none
+&none LHRM_P_C(A) LHRM_R_C(S) LHRM_M_C(D)     LHRM_I_C(F)          &kp G                        &kp H   RHRM_I_C(J)          RHRM_M_C(K) RHRM_R_C(L)   RHRM_P_C(SEMI) &none
+&none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V                &kp B                        &kp N   &kp M                &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
+                              THM(MOUSE, ESC) THM(CURSOR_C, SPACE) THM(NUM_PAD_C, TAB)          &kp RET THM(SYM_PAD_C, BSPC) &kp DEL
             >;
 
         };
@@ -752,10 +762,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "BaseGsc";
 
             bindings = <
-&none &kp Q       &kp W       &kp E           &kp R               &kp T                        &kp Y   &kp U                 &kp I       &kp O         &kp P          &none
-&none LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)         &kp G                        &kp H   RHRM_I_G(J)           RHRM_M_G(K) RHRM_R_G(L)   RHRM_P_G(SEMI) &none
-&none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V               &kp B                        &kp N   &kp M                 &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
-                              THM(MOUSE, ESC) THM(CURSOR_G, BSPC) THM(NUM_PAD_G, TAB)          &kp RET THM(SYM_PAD_G, SPACE) &kp DEL
+&none &kp Q       &kp W       &kp E           &kp R                &kp T                        &kp Y   &kp U                &kp I       &kp O         &kp P          &none
+&none LHRM_P_G(A) LHRM_R_G(S) LHRM_M_G(D)     LHRM_I_G(F)          &kp G                        &kp H   RHRM_I_G(J)          RHRM_M_G(K) RHRM_R_G(L)   RHRM_P_G(SEMI) &none
+&none LHRM_HYP(Z) LHRM_MEH(X) &kp C           &kp V                &kp B                        &kp N   &kp M                &kp COMMA   RHRM_MEH(DOT) RHRM_HYP(FSLH) &none
+                              THM(MOUSE, ESC) THM(CURSOR_G, SPACE) THM(NUM_PAD_G, TAB)          &kp RET THM(SYM_PAD_G, BSPC) &kp DEL
             >;
         };
 
