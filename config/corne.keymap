@@ -838,7 +838,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             */
 
             bindings = <
-&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
+&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &trans          &trans
 &trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C(MINUS) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
                         &kp DEL        &kp BSPC       &trans          &trans   &trans          &kp N0
@@ -849,7 +849,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "NmPdGsc";
 
             bindings = <
-&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &none           &trans
+&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &trans          &trans
 &trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &kp RET         &kp SQT  RHRM_I_G(N4)    RHRM_M_G(N5)   RHRM_R_G(N6)    RHRM_P_G(MINUS) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
                         &kp DEL        &kp BSPC       &trans          &trans   &trans          &kp N0
@@ -860,7 +860,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdCgs";
 
             bindings = <
-&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &none           &none           &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &trans          &trans          &trans
 &trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
                         &kp DEL        &kp BSPC       &trans          &trans   &trans         &trans
@@ -871,7 +871,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdGsc";
 
             bindings = <
-&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &none           &none           &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &trans          &trans          &trans
 &trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &kp RET         &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
                         &kp DEL        &kp BSPC       &trans          &trans   &trans         &trans
@@ -890,9 +890,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
             */
 
             bindings = <
-&trans &to BASE_C   &to BASE_G   &none        &bt BT_CLR   &bt BT_CLR_ALL          &none  &kp F7 &kp F8 &kp F9 &kp F10 &trans
-&trans &none        &none        &none        &bootloader  &studio_unlock          &none  &kp F4 &kp F5 &kp F6 &kp F12 &trans
-&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &none  &kp F1 &kp F2 &kp F3 &kp F11 &trans
+&trans &to BASE_C   &to BASE_G   &trans       &bt BT_CLR   &bt BT_CLR_ALL          &trans &kp F7 &kp F8 &kp F9 &kp F10 &trans
+&trans &trans       &trans       &trans       &bootloader  &studio_unlock          &trans &kp F4 &kp F5 &kp F6 &kp F12 &trans
+&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &trans &kp F1 &kp F2 &kp F3 &kp F11 &trans
                                  &trans       &trans       &trans                  &trans &trans &trans
             >;
         };
@@ -901,10 +901,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
         MOUSE {
             display-name = "Mouse";
             bindings = <
-&trans &none &none          &mmv MOVE_UP   &none           &none                  &msc SCRL_UP   &mkp LCLK      &mkp RCLK      &mkp MCLK    &none           &trans
-&trans &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none                  &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans
-&trans &none &none          &none          &none           &none                  &none          &none          &none          &none        &none           &trans
-                            &none          &none           &none                  &none          &none          &none
+&trans &trans &trans         &mmv MOVE_UP   &trans          &trans                 &msc SCRL_UP   &mkp LCLK      &mkp RCLK      &mkp MCLK    &trans          &trans
+&trans &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans                 &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans
+&trans &trans &trans         &trans         &trans          &trans                 &trans         &trans         &trans         &trans       &trans          &trans
+                             &trans         &trans          &trans                 &trans         &trans         &trans
             >;
         };
 
