@@ -64,7 +64,7 @@ build() {
         devcontainer up --workspace-folder "$WORKSPACE_FOLDER"
         echo "Devcontainer daemon started"
     fi
-    devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/draw.sh
+    devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" python3 /workspaces/zmk-config/draw.py
     devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/build.sh
 }
 
@@ -83,7 +83,7 @@ case "${1:-build}" in
             devcontainer up --workspace-folder "$WORKSPACE_FOLDER"
             echo "Devcontainer daemon started"
         fi
-        devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" bash /workspaces/zmk-config/draw.sh
+        devcontainer exec --workspace-folder "$WORKSPACE_FOLDER" python3 /workspaces/zmk-config/draw.py
         ;;
     build)
         build
