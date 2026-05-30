@@ -42,6 +42,23 @@ LAYER_RENAME = {
     "SyPdGsc": "Linux Symbol Pad (SyPdGsc GASC)",
 }
 
+# Corne thumb layer-tap key positions -> hold label (same for CAGS and GASC)
+THUMB_HOLD_LEGEND = {
+    36: "mouse",
+    37: "cursor",
+    38: "number",
+    40: "symbol",
+}
+
+def enrich_held_layer_legends(layers: dict[str, list]) -> None:
+    """Label empty held &trans activator keys from thumb position, not CAGS/GASC base layer."""
+    for layer_name, layer_keys in layers.items():
+        if layer_name in ("BaseCgs", "BaseGsc"):
+            continue
+        for idx, key in enumerate(layer_keys):
+            if isinstance(key, dict) and "held" in key.get("type", "") and (legend := THUMB_HOLD_LEGEND.get(idx)):
+                layer_keys[idx] = {"h": legend, "type": key["type"]}
+
 if not shutil.which("keymap"):
     raise SystemExit(f"keymap-drawer required")
 
@@ -51,6 +68,8 @@ parsed = subprocess.check_output(
 )
 data = yaml.safe_load(parsed)
 layers = data["layers"]
+
+enrich_held_layer_legends(layers)
 
 unknown = [name for name in LAYERS if name not in layers]
 if unknown:
