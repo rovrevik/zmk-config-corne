@@ -23,7 +23,43 @@ parse_config:
     lthm_v_gasc: { hidden: true }
     gui_return_cags: { hidden: true }
 
+  # Short names on layer-tap / &mo legends (keys must match display-name from corne.keymap)
+  # https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md#layer_legend_map
+  layer_legend_map:
+    BaseCgs: base
+    BaseGsc: base
+    CrsrCgs: cursor
+    CrsrGsc: cursor
+    NmPdCgs: number
+    NmPdGsc: number
+    SyPdCgs: symbol
+    SyPdGsc: symbol
+    FnPd: function
+    Mouse: mouse
+    Function: globe
+
   raw_binding_map:
+    # NUM_PAD number row (shift): !@#$%^&*()
+    '&kp N0': {tap: "0", shifted: ")"}
+    '&kp N1': {tap: "1", shifted: "!"}
+    '&kp N2': {tap: "2", shifted: "@"}
+    '&kp N3': {tap: "3", shifted: "#"}
+    '&kp N4': {tap: "4", shifted: "$"}
+    '&kp N5': {tap: "5", shifted: "%"}
+    '&kp N6': {tap: "6", shifted: "^"}
+    '&kp N7': {tap: "7", shifted: "&"}
+    '&kp N8': {tap: "8", shifted: "*"}
+    '&kp N9': {tap: "9", shifted: "("}
+
+    '&kp MINUS': {tap: "-", shifted: "_"}
+    '&kp EQUAL': {tap: "=", shifted: "+"}
+    '&kp BSLH': {tap: "\\", shifted: "|"}
+    '&kp SEMI': {tap: ";", shifted: ":"}
+    '&kp SQT': {tap: "'", shifted: "\""}
+    '&kp COMMA': {tap: ",", shifted: "<"}
+    '&kp DOT': {tap: ".", shifted: ">"}
+    '&kp FSLH': {tap: "/", shifted: "?"}
+
     # CURSOR shortcuts (#define _NAME LG(...))
     '&kp LG(Q)': quit
     '&kp LG(W)': close
@@ -47,6 +83,16 @@ parse_config:
     # '&bootloader': BOOT
     # '&studio_unlock': STUDIO
     # '&capsword': capsword
+
+    # Home row mod holds (expanded from LHRM_* / RHRM_* LCTRL, LALT, …)
+    '&kp LCTRL': lctrl
+    '&kp LALT': lalt
+    '&kp LGUI': lgui
+    '&kp LSHFT': lshift
+    '&kp RCTRL': rctrl
+    '&kp RALT': ralt
+    '&kp RGUI': rgui
+    '&kp RSHFT': rshift
 
     # Hyper / Meh holds (expanded from LHYPER / LMEH / RHYPER / RMEH)
     '&kp LC(LA(LG(LSHFT)))': lhyper
