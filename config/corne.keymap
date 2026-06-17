@@ -687,6 +687,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "BaseCgs";
 
             /*
+            template
             | Left Half:            |      | Right Half:           |
             |   |   |   |   |   |   |      |   |   |   |   |   |   |
             |   |   |   |   |   |   |      |   |   |   |   |   |   |
@@ -695,6 +696,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             */
 
             /*
+            Base
             | Left Half:                    |      | Right Half:                  |
             |   | Q | W | E   | R     | T   |      | Y   | U    | I   | O | P |   |
             |   | A | S | D   | F     | G   |      | H   | J    | K   | L | ; |   |
@@ -773,6 +775,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "CrsrCgs";
 
             /*
+            Cursor: Crsr
             | Left Half:                                          |      | Right Half:                                   |
             |   | _QUIT | _CLOSE |       | _REFRESH |             |      | _REDO    | _PASTE | _COPY | _CUT  | _UNDO |   |
             |   | _ALL  | _SAVE  |       | _FIND    | _FIND_AGAIN |      | capsword | LEFT   | DOWN  | UP    | RIGHT |   |
@@ -821,21 +824,24 @@ zmk/app/dts/bindings/zmk,combos.yaml
         - bottom row: ,./ (shift): <>?
         */
         NUM_PAD_C {
-            display-name = "NmPdCgs";
 
             /*
+            Number Pad: NmPd
             | Left Half:                   |      | Right Half:           |
             |   | ` |   | (   | )    |     |      | \ | 7 | 8 | 9 |   |   |
             |   |   |   | [   | ]    | RET |      | ' | 4 | 5 | 6 | - |   |
             |   |   |   | {   | }    |     |      | " | 1 | 2 | 3 | = |   |
             |           | DEL | BSPC |     |      |   |   | 0 |           |
 
+            Symbol Pad: SyPd
             | Left Half:                   |      | Right Half:           |
             |   | ~ |   | (   | )    |     |      | | | & | * |   |   |   |
-            |   |   |   | [   | ]    | RET |      | " | $ | % | ^ | _ |   |
+            |   |   |   | [   | ]    |     |      | " | $ | % | ^ | _ |   |
             |   |   |   | {   | }    |     |      | " | ! | @ | # | + |   |
-            |           | DEL | BSPC |     |      |   |   |   |           |
+            |           |     |      |     |      |   |   |   |           |
             */
+
+            display-name = "NmPdCgs";
 
             bindings = <
 &trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &trans          &trans
@@ -861,9 +867,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
             bindings = <
 &trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &trans          &trans          &trans
-&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
-                        &kp DEL        &kp BSPC       &trans          &trans   &trans         &trans
+                        &trans         &trans         &trans          &trans   &trans         &trans
             >;
         };
 
@@ -872,9 +878,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
 
             bindings = <
 &trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &trans          &trans          &trans
-&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &kp RET         &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
+&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
 &trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
-                        &kp DEL        &kp BSPC       &trans          &trans   &trans         &trans
+                        &trans         &trans         &trans          &trans   &trans         &trans
             >;
         };
 
@@ -882,6 +888,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "FnPd";
 
             /*
+            Function Pad: FnPd
             | Left Half:                        |      | Right Half:                |
             |   | CAGS | GASC |     | C   | CA  |      |   | F7 | F8 | F9 | F10 |   |
             |   |      |      |     | BL  | SU  |      |   | F4 | F5 | F6 | F12 |   |
