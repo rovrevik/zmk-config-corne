@@ -51,6 +51,7 @@ parse_config:
     '&kp N8': {tap: "8", shifted: "*"}
     '&kp N9': {tap: "9", shifted: "("}
 
+    '&kp GRAVE': {tap: "`", shifted: "~"}
     '&kp MINUS': {tap: "-", shifted: "_"}
     '&kp EQUAL': {tap: "=", shifted: "+"}
     '&kp BSLH': {tap: "\\", shifted: "|"}
