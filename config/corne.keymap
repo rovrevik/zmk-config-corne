@@ -86,6 +86,8 @@
 #define RHRM_M_C(tap) &hrm_r_m RGUI tap
 #define RHRM_R_C(tap) &hrm_r_r RALT tap
 #define RHRM_P_C(tap) &hrm_r_p RCTRL tap
+// Custom tap (mod-morph, etc.): needs hrm_r_p_<name> with bindings = <&kp>, <&name>
+#define RHRM_P_C_TAP(name) &hrm_r_p_##name RCTRL 0
 
 // GASC home row mods (Linux/Windows)
 #define LHRM_P_G(tap) &hrm_l_p LGUI tap
@@ -269,6 +271,20 @@ zmk/app/dts/bindings/zmk,combos.yaml
             hold-trigger-on-release;
         };
 
+        // NUM_PAD_C pinky: RCTRL hold, plus_equal tap (keymap: HRM_R_P_TAP(plus_equal))
+        hrm_r_p_plus_equal: home_row_right_pinky_plus_equal {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "HRM pinky plus/eq";
+            #binding-cells = <2>;
+            tapping-term-ms = <HRM_P_TAPPING_TERM_MS>;
+            bindings = <&kp>, <&plus_equal>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <HRM_P_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_P_REQUIRE_PRIOR_IDLE_MS>;
+            hold-trigger-key-positions = <LEFT_KEY_POSITIONS>;
+            hold-trigger-on-release;
+        };
+
         /*
         para: para {
             compatible = "zmk,behavior-tap-dance";
@@ -292,6 +308,14 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "caps word toggle";
             #binding-cells = <0>;
             continue-list = <MINUS BSPC UNDER>;
+        };
+
+        plus_equal: plus_equal {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Plus/Equal";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp EQUAL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         /*
@@ -828,26 +852,26 @@ zmk/app/dts/bindings/zmk,combos.yaml
             /*
             Number Pad: NmPd
             | Left Half:                   |      | Right Half:           |
-            |   | ` |   | (   | )    |     |      | \ | 7 | 8 | 9 |   |   |
-            |   |   |   | [   | ]    | RET |      | ' | 4 | 5 | 6 | - |   |
-            |   |   |   | {   | }    |     |      | " | 1 | 2 | 3 | = |   |
-            |           | DEL | BSPC |     |      |   |   | 0 |           |
+            |   | ` |   | (   | )    |     |      |   | 7 | 8 | 9 | - |   |
+            |   |   |   | [   | ]    | RET |      | ' | 4 | 5 | 6 | + |   |
+            |   |   |   | {   | }    |     |      |   | 1 | 2 | 3 | \ |   |
+            |           | DEL | BSPC |     |      |   | 0 | . |           |
 
             Symbol Pad: SyPd
             | Left Half:                   |      | Right Half:           |
-            |   | ~ |   | (   | )    |     |      | | | & | * |   |   |   |
-            |   |   |   | [   | ]    |     |      | " | $ | % | ^ | _ |   |
-            |   |   |   | {   | }    |     |      | " | ! | @ | # | + |   |
+            |   | ~ |   | (   | )    |     |      |   | & | * |   |   |   |
+            |   |   |   | [   | ]    |     |      |   | $ | % | ^ |   |   |
+            |   |   |   | {   | }    |     |      |   | ! | @ | # |   |   |
             |           |     |      |     |      |   |   |   |           |
             */
 
             display-name = "NmPdCgs";
 
             bindings = <
-&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &trans          &trans
-&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C(MINUS) &trans
-&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
-                        &kp DEL        &kp BSPC       &trans          &trans   &trans          &kp N0
+&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &trans   &kp N7          &kp N8         &kp N9          &kp MINUS                &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C_TAP(plus_equal) &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans   &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(BSLH)           &trans
+                        &kp DEL        &kp BSPC       &trans          &trans   &kp N0          &kp DOT
             >;
         };
 
@@ -866,9 +890,9 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdCgs";
 
             bindings = <
-&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &trans          &trans          &trans
-&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &kp SQT  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) RHRM_P_C(UNDER) &trans
-&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &trans   &kp AMPS       &kp STAR        &trans          &trans         &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &trans   RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) &trans         &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans   &kp EXCL       &kp AT          RHRM_MEH(HASH)  &trans         &trans
                         &trans         &trans         &trans          &trans   &trans         &trans
             >;
         };
