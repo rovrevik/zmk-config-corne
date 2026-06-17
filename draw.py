@@ -10,7 +10,7 @@ import yaml
 REPO = Path(__file__).resolve().parent
 CONFIG = REPO / "keymap_drawer.config.yaml"
 KEYMAP = REPO / "config" / "corne.keymap"
-OUT = Path("/workspaces/zmk/build/keymap") if Path("/workspaces/zmk").is_dir() else REPO / "build" / "keymap"
+OUT = REPO / "build" / "keymap"
 
 # display-name from config/corne.keymap; order controls SVG layout, omit to hide
 LAYERS = [
