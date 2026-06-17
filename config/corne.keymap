@@ -98,6 +98,8 @@
 #define RHRM_M_G(tap) &hrm_r_m RSHFT tap
 #define RHRM_R_G(tap) &hrm_r_r RALT tap
 #define RHRM_P_G(tap) &hrm_r_p RGUI tap
+// Custom tap (mod-morph, etc.): needs hrm_r_p_<name> with bindings = <&kp>, <&name>
+#define RHRM_P_G_TAP(name) &hrm_r_p_##name RGUI 0
 
 // Hyper and Meh home row mods (OS-independent)
 #define LHRM_HYP(tap) &hrm_l_p LHYPER tap
@@ -868,10 +870,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "NmPdCgs";
 
             bindings = <
-&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &trans   &kp N7          &kp N8         &kp N9          &kp MINUS                &trans
-&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT  RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C_TAP(plus_equal) &trans
-&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans   &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(BSLH)           &trans
-                        &kp DEL        &kp BSPC       &trans          &trans   &kp N0          &kp DOT
+&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &trans  &kp N7          &kp N8         &kp N9          &kp MINUS                &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &kp RET         &kp SQT RHRM_I_C(N4)    RHRM_M_C(N5)   RHRM_R_C(N6)    RHRM_P_C_TAP(plus_equal) &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(BSLH)           &trans
+                        &kp DEL        &kp BSPC       &trans          &trans  &kp N0          &kp DOT
             >;
         };
 
@@ -879,10 +881,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "NmPdGsc";
 
             bindings = <
-&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &kp BSLH &kp N7          &kp N8         &kp N9          &trans          &trans
-&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &kp RET         &kp SQT  RHRM_I_G(N4)    RHRM_M_G(N5)   RHRM_R_G(N6)    RHRM_P_G(MINUS) &trans
-&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(EQUAL) &trans
-                        &kp DEL        &kp BSPC       &trans          &trans   &trans          &kp N0
+&trans &kp GRAVE &trans &kp LPAR       &kp RPAR       &trans          &trans  &kp N7          &kp N8         &kp N9          &kp MINUS                &trans
+&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &kp RET         &kp SQT RHRM_I_G(N4)    RHRM_M_G(N5)   RHRM_R_G(N6)    RHRM_P_G_TAP(plus_equal) &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans  &kp N1          &kp N2         RHRM_MEH(N3)    RHRM_HYP(BSLH)           &trans
+                        &kp DEL        &kp BSPC       &trans          &trans  &kp N0          &kp DOT
             >;
         };
 
@@ -890,10 +892,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdCgs";
 
             bindings = <
-&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &trans   &kp AMPS       &kp STAR        &trans          &trans         &trans
-&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &trans   RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) &trans         &trans
-&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans   &kp EXCL       &kp AT          RHRM_MEH(HASH)  &trans         &trans
-                        &trans         &trans         &trans          &trans   &trans         &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &trans  &kp AMPS       &kp STAR        &trans          &trans                   &trans
+&trans &trans    &trans LHRM_M_C(LBKT) LHRM_I_C(RBKT) &trans          &trans  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) &trans                   &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans  &kp EXCL       &kp AT          RHRM_MEH(HASH)  &trans                   &trans
+                        &trans         &trans         &trans          &trans  &trans         &trans
             >;
         };
 
@@ -901,10 +903,10 @@ zmk/app/dts/bindings/zmk,combos.yaml
             display-name = "SyPdGsc";
 
             bindings = <
-&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &kp PIPE &kp AMPS       &kp STAR        &trans          &trans          &trans
-&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &kp SQT  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) RHRM_P_G(UNDER) &trans
-&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &kp DQT  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(PLUS)  &trans
-                        &trans         &trans         &trans          &trans   &trans         &trans
+&trans &kp TILDE &trans &kp LPAR       &kp RPAR       &trans          &trans  &kp AMPS       &kp STAR        &trans          &trans                   &trans
+&trans &trans    &trans LHRM_M_G(LBKT) LHRM_I_G(RBKT) &trans          &trans  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) &trans                   &trans
+&trans &trans    &trans &kp LBRC       &kp RBRC       &trans          &trans  &kp EXCL       &kp AT          RHRM_MEH(HASH)  &trans                   &trans
+                        &trans         &trans         &trans          &trans  &trans         &trans
             >;
         };
 
