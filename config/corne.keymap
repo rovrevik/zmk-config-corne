@@ -52,7 +52,7 @@
 #define LTHM_ROLL_KEY_POSITIONS A_KEY_POSITION S_KEY_POSITION F_KEY_POSITION G_KEY_POSITION Z_KEY_POSITION X_KEY_POSITION C_KEY_POSITION V_KEY_POSITION
 #define RT_RET_KEY_POSITION 39
 #define GRAVE_KEY_POSITION 1
-#define UNDER_GRAVE_KEY_POSITION 13
+#define GRAVE_COMBO_KEY_POSITION 13
 
 // support left hand only operation
 // these are all the same as the default combos but with the left hand cursor layer key
@@ -691,7 +691,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         activate_terminal_cags {
             // default is sufficient timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LC(GRAVE)>;
-            key-positions = <GRAVE_KEY_POSITION UNDER_GRAVE_KEY_POSITION>;
+            key-positions = <GRAVE_KEY_POSITION GRAVE_COMBO_KEY_POSITION>;
             layers = <BASE_C>;
         };
 
@@ -699,7 +699,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         comment_out_line_cags {
             // default is sufficient timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(FSLH)>;
-            key-positions = <GRAVE_KEY_POSITION UNDER_GRAVE_KEY_POSITION>;
+            key-positions = <GRAVE_KEY_POSITION GRAVE_COMBO_KEY_POSITION>;
             layers = <CURSOR_C>;
         };
     };
