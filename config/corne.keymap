@@ -740,7 +740,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         There is some fricton transitioning to a normal keyboard because the the sapce key is duplicated.
         macOS: fn ESC (control) SPACE (option) TAB (command) SPACE (space bar)
 
-        The base layer thumb keys are [Miryoku](https://github.com/manna-harbour/miryoku)
+        The base layer thumb keys are [Miryoku](https://github.com/manna-harbour/miryoku/tree/master/docs/reference#base)
         - left thumb outer: ESC
         - left thumb middle: SPACE
         - left thumb inner: TAB
@@ -770,7 +770,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         - HYPER:
             - left pinky inner z (hold)
             - removed legacy: left pinky middle outer (hold)
-        - FUNCTION layer:
+        - FUNCTION/GLOBE:
             - removed legacy: left pinky outer lower
         */
 
@@ -803,17 +803,15 @@ zmk/app/dts/bindings/zmk,combos.yaml
         |                    |       |          |             |      |          |        |       |                   |
         */
 
-        // SPACE and RET are intentionally not on home row mod keys so there is repeat triggering
-        // following the pattern of only configuring system shortcuts
+        // intentionally does not have homerow mods
+        // follows the pattern of only configuring system shortcuts
         // thumb key + key is similar to GUI + key
         // application shortcuts are being supported with macros
-        // the T / RET shortcut conflicts with GUI + T to create an new tab in the browser
 
-        // Right hand is based on [Miryoku](https://github.com/manna-harbour/miryoku)
-
-        //todo:
-        // support home row mod on &capsword &hrm_l_p LCTRL &capsword
-        // add COMMENT_OUT_LINE
+        // Right hand is based on [Miryoku](https://github.com/manna-harbour/miryoku/tree/master/docs/reference#nav)
+        // capsword in favor of capslock
+        // TODO: consider triggering capslock with a modifier
+        // considered and rejected swapping home and end to be consistent with page down/up.
 
         CURSOR_C {
             display-name = "CrsrCgs";
@@ -922,6 +920,7 @@ zmk/app/dts/bindings/zmk,combos.yaml
         };
 
         // TODO: add legend
+        // Right hand is based on [Miryoku](https://github.com/manna-harbour/miryoku/tree/master/docs/reference#mouse)
         MOUSE {
             display-name = "Mouse";
             bindings = <

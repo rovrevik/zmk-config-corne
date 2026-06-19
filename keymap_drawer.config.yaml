@@ -26,8 +26,8 @@ parse_config:
   # Short names on layer-tap / &mo legends (keys must match display-name from corne.keymap)
   # https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md#layer_legend_map
   layer_legend_map:
-    BaseCgs: base
-    BaseGsc: base
+    BaseCgs: CAGS
+    BaseGsc: GASC
     CrsrCgs: cursor
     CrsrGsc: cursor
     NmPdCgs: number
