@@ -904,16 +904,22 @@ zmk/app/dts/bindings/zmk,combos.yaml
         Function Pad: FnPd
         | Left Half:                        |      | Right Half:                |
         |   | CAGS | GASC |     | C   | CA  |      |   | F7 | F8 | F9 | F10 |   |
-        |   |      |      |     | BL  | SU  |      |   | F4 | F5 | F6 | F12 |   |
+        |   |      |      |     |     |     |      |   | F4 | F5 | F6 | F12 |   |
         |   | BT0  | BT1  | BT2 | BT3 | BT4 |      |   | F1 | F2 | F3 | F11 |   |
         |                 |     |     |     |      |   |    |    |              |
+
+        // preserve homerow mods on left hand
+        // OBE: never used these
+        // &bootloader  &studio_unlock
+        // Left hand, second row:
+        |   |      |      |     | BL  | SU  |
         */
 
         FCN_PAD {
             display-name = "FnPd";
             bindings = <
 &trans &to BASE_C   &to BASE_G   &trans       &bt BT_CLR   &bt BT_CLR_ALL          &trans &kp F7 &kp F8 &kp F9 &kp F10 &trans
-&trans &trans       &trans       &trans       &bootloader  &studio_unlock          &trans &kp F4 &kp F5 &kp F6 &kp F12 &trans
+&trans &trans       &trans       &trans       &trans       &trans                  &trans &kp F4 &kp F5 &kp F6 &kp F12 &trans
 &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &trans &kp F1 &kp F2 &kp F3 &kp F11 &trans
                                  &trans       &trans       &trans                  &trans &trans &trans
             >;
