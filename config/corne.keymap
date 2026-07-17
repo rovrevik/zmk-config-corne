@@ -93,10 +93,10 @@
 // GASC home row mods (Linux/Windows)
 #define LHRM_P_G(tap) &hrm_l_p LGUI tap
 #define LHRM_R_G(tap) &hrm_l_r LALT tap
-#define LHRM_M_G(tap) &hrm_l_m LSHFT tap
-#define LHRM_I_G(tap) &hrm_l_i LCTRL tap
-#define RHRM_I_G(tap) &hrm_r_i RCTRL tap
-#define RHRM_M_G(tap) &hrm_r_m RSHFT tap
+#define LHRM_M_G(tap) &hrm_l_m LCTRL tap
+#define LHRM_I_G(tap) &hrm_l_i LSHFT tap
+#define RHRM_I_G(tap) &hrm_r_i RSHFT tap
+#define RHRM_M_G(tap) &hrm_r_m RCTRL tap
 #define RHRM_R_G(tap) &hrm_r_r RALT tap
 #define RHRM_P_G(tap) &hrm_r_p RGUI tap
 // Custom tap (mod-morph, etc.): needs hrm_r_p_<name> with bindings = <&kp>, <&name>
