@@ -884,20 +884,20 @@ zmk/app/dts/bindings/zmk,combos.yaml
         SYM_PAD_C {
             display-name = "SyPdCgs";
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans                            &trans  &kp AMPS       &kp STAR        &trans          &trans         &trans
-&trans &trans &trans &trans &trans &trans &trans                            &trans  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) &trans         &trans
-&trans &trans &trans &trans &trans &trans &trans                            &trans  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(BSLH) &trans
-                            &trans &trans &trans                            &trans  &trans         &trans
+&trans &trans &trans &trans &trans &trans                                   &trans  &kp AMPS       &kp STAR        &trans          &trans         &trans
+&trans &trans &trans &trans &trans &trans                                   &trans  RHRM_I_C(DLLR) RHRM_M_C(PRCNT) RHRM_R_C(CARET) &trans         &trans
+&trans &trans &trans &trans &trans &trans                                   &trans  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(BSLH) &trans
+                     &trans &trans &trans                                   &trans  &trans         &trans
             >;
         };
 
         SYM_PAD_G {
             display-name = "SyPdGsc";
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans                            &trans  &kp AMPS       &kp STAR        &trans          &trans         &trans
-&trans &trans &trans &trans &trans &trans &trans                            &trans  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) &trans         &trans
-&trans &trans &trans &trans &trans &trans &trans                            &trans  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(BSLH) &trans
-                            &trans &trans &trans                            &trans  &trans         &trans
+&trans &trans &trans &trans &trans &trans                                   &trans  &kp AMPS       &kp STAR        &trans          &trans         &trans
+&trans &trans &trans &trans &trans &trans                                   &trans  RHRM_I_G(DLLR) RHRM_M_G(PRCNT) RHRM_R_G(CARET) &trans         &trans
+&trans &trans &trans &trans &trans &trans                                   &trans  &kp EXCL       &kp AT          RHRM_MEH(HASH)  RHRM_HYP(BSLH) &trans
+                     &trans &trans &trans                                   &trans  &trans         &trans
             >;
         };
 
