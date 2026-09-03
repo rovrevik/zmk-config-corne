@@ -1,3 +1,5 @@
+.DS_Store
+
 out/
 .venv-draw/
 __pycache__/
