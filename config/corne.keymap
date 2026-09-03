@@ -2,6 +2,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 // layer indexes
 // need almost duplicate layers that override taps on the home row keys
@@ -21,7 +23,9 @@
 // layers that do not override taps on the home row keys
 #define FCN_PAD 8
 #define MOUSE 9
-#define FUNCTION 10
+#define MOUSE_SLOW 10   // key 27 on MOUSE layer (hold 36 + 27)
+#define MOUSE_FAST 11        // key 28 on MOUSE layer (hold 36 + 28)
+#define FUNCTION 12
 
 // #define NAV 7
 // #define SYM 8
@@ -66,6 +70,7 @@
 #define _QUIT LG(Q)
 #define _CLOSE LG(W)
 #define _REFRESH LG(R)
+// left only: copy url, new tab and paste
 #define _NEW_TAB LG(T)
 #define _ALL LG(A)
 #define _SAVE LG(S)
@@ -146,6 +151,65 @@ zmk/app/dts/bindings/zmk,combos.yaml
 #define COMBO_TIMEOUT_MS                    125
 #define LEFT_GUI_ROLL_COMBO_TIMEOUT_MS      250
 #define GUI_RETURN_ROLL_COMBO_TIMEOUT_MS    250
+
+// input wrapping
+// &mmv {
+//     x-input-code = <INPUT_REL_X>;
+//     y-input-code = <INPUT_REL_Y>;
+//     time-to-max-speed-ms = <300>;
+//     acceleration-exponent = <1>;
+// };
+
+// &msc {
+//     x-input-code = <INPUT_REL_HWHEEL>;
+//     y-input-code = <INPUT_REL_WHEEL>;
+//     time-to-max-speed-ms = <300>;
+//     acceleration-exponent = <0>;
+// };
+// Based on @caksoylar's config, defaults in comments
+&mmv {
+    delay-ms = <0>;                       // 0
+    time-to-max-speed-ms = <500>;         // 300
+    acceleration-exponent = <1>;          // 1
+};
+
+&msc {
+    delay-ms = <0>;                       // 0
+    time-to-max-speed-ms = <300>;         // 300
+    acceleration-exponent = <0>;          // 0
+};
+
+&mmv_input_listener {
+    precision {
+        layers = <MOUSE_SLOW>;
+        input-processors = <&zip_xy_scaler 1 2>;
+    };
+    warp {
+        layers = <MOUSE_FAST>;
+        input-processors = <&zip_xy_scaler 3 1>;
+    };
+};
+
+/ {
+    zip_scroll_scaler: zip_scroll_scaler {
+      compatible = "zmk,input-processor-scaler";
+      #input-processor-cells = <2>;
+      type = <INPUT_EV_REL>;
+      codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+      track-remainders;
+    };
+};
+
+&msc_input_listener {
+    precision {
+        layers = <MOUSE_SLOW>;
+        input-processors = <&zip_scroll_scaler 1 2>;
+    };
+    warp {
+        layers = <MOUSE_FAST>;
+        input-processors = <&zip_scroll_scaler 2 1>;
+    };
+};
 
 / {
     behaviors {
@@ -927,14 +991,40 @@ zmk/app/dts/bindings/zmk,combos.yaml
         };
 
         // TODO: add legend
+        // TODO: invert scroll macOS versus Linux
         // Right hand is based on [Miryoku](https://github.com/manna-harbour/miryoku/tree/master/docs/reference#mouse)
+        // [ZMK mouse emulation](https://zmk.dev/docs/keymaps/behaviors/mouse-emulation)
+        // [](https://github.com/urob/zmk-config/blob/main/config/mouse.dtsi)
+        // Key 36 (thumb): THM(MOUSE, ESC) on base layers — hold activates MOUSE.
+        // Keys 27/28 (C/V): &mo speed modifiers on this layer only; no letter output.
+        // Precision: hold 36 + 27. Warp: hold 36 + 28. Default speed: hold 36 only.
         MOUSE {
             display-name = "Mouse";
             bindings = <
-&trans &trans &trans         &mmv MOVE_UP   &trans          &trans                 &msc SCRL_UP   &mkp LCLK      &mkp RCLK      &mkp MCLK    &trans          &trans
-&trans &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans                 &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans
-&trans &trans &trans         &trans         &trans          &trans                 &trans         &trans         &trans         &trans       &trans          &trans
-                             &trans         &trans          &trans                 &trans         &trans         &trans
+&trans &trans &trans &trans         &trans         &trans           &trans    &trans         &trans         &trans         &trans          &trans
+&trans &trans &trans &trans         &trans         &trans           &trans    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP   &mmv MOVE_RIGHT &trans
+&trans &trans &trans &mo MOUSE_SLOW &mo MOUSE_FAST &trans           &trans    &msc SCRL_LEFT &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_RIGHT &trans
+                     &trans         &trans         &trans           &mkp RCLK &mkp LCLK      &mkp MCLK
+            >;
+        };
+
+        MOUSE_SLOW {
+            display-name = "Slow";
+            bindings = <
+&trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
+                     &trans &trans &trans           &trans &trans &trans
+            >;
+        };
+
+        MOUSE_FAST {
+            display-name = "Fast";
+            bindings = <
+&trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
+                     &trans &trans &trans           &trans &trans &trans
             >;
         };
 

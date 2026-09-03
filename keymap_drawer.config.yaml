@@ -36,6 +36,8 @@ parse_config:
     SyPdGsc: symbol
     FnPd: function
     Mouse: mouse
+    Slow: slow
+    Fast: fast
     Function: globe
 
   raw_binding_map:
@@ -65,6 +67,7 @@ parse_config:
     '&kp LG(Q)': quit
     '&kp LG(W)': close
     '&kp LG(R)': refresh
+    '&kp LG(T)': new tab
     '&kp LG(A)': all
     '&kp LG(S)': save
     '&kp LG(F)': find
